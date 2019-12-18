@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -56,6 +57,7 @@ public class LesionResultController implements Initializable {
     @FXML
     Pagination lesionPage;
 
+    private ScreenController screenController = new ScreenController();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Set hover when moving mouse to specific label
@@ -71,5 +73,8 @@ public class LesionResultController implements Initializable {
         System.out.println("access  clicked");
     }
 
-
+    public void logClicked(MouseEvent mouseEvent) {
+        screenController.closeScreen((Stage) hosNameLab.getScene().getWindow());
+        screenController.openScreen("login");
+    }
 }

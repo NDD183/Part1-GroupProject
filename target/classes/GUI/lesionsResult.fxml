@@ -30,17 +30,32 @@
                   <Insets top="15.0" />
                </padding>
                <children>
-                  <Label fx:id="backLab" onMouseClicked="#backClicked" text="Back to internal system " underline="true" wrapText="true">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets left="5.0" top="10.0" />
-                     </padding>
-                  </Label>
+                  <VBox prefHeight="54.0" prefWidth="154.0">
+                     <children>
+                        <Label fx:id="backLab" onMouseClicked="#backClicked" prefHeight="27.0" prefWidth="147.0" text="Back to internal system " underline="true" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="logLab" layoutX="10.0" layoutY="10.0" onMouseClicked="#logClicked" text="Log out" underline="true" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
                   <Label fx:id="hosNameLab" alignment="CENTER" contentDisplay="CENTER" text="SIR JOSH MONASH HOSPITAL" textAlignment="CENTER" textFill="#da0707" wrapText="true">
                      <padding>
-                        <Insets left="100.0" right="15.0" top="5.0" />
+                        <Insets left="60.0" right="15.0" top="5.0" />
                      </padding>
                      <font>
                         <Font name="System Bold" size="20.0" />
@@ -61,7 +76,7 @@
             <Insets left="15.0" right="5.0" />
          </padding>
       </VBox>
-      <SplitPane dividerPositions="0.20949720670391062" layoutX="14.0" layoutY="130.0" orientation="VERTICAL" prefHeight="718.0" prefWidth="800.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+      <SplitPane dividerPositions="0.20949720670391062" layoutX="14.0" layoutY="130.0" orientation="VERTICAL" prefHeight="711.0" prefWidth="810.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="177.0" prefWidth="808.0">
                <children>

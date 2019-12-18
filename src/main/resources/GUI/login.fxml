@@ -80,7 +80,7 @@
                         <HBox layoutX="10.0" layoutY="127.0" prefHeight="100.0" prefWidth="100.0">
                            <children>
                               <Label prefWidth="70.0" text="Server" />
-                              <ComboBox fx:id="serverBox" prefHeight="25.0" prefWidth="200.0">
+                              <ComboBox fx:id="serverBox" prefHeight="29.0" prefWidth="150.0">
                                  <HBox.margin>
                                     <Insets left="15.0" />
                                  </HBox.margin>
@@ -93,7 +93,7 @@
                         <HBox prefHeight="100.0" prefWidth="100.0">
                            <children>
                               <Label prefWidth="70.0" text="Hospital" />
-                              <ComboBox fx:id="hosBox" prefHeight="25.0" prefWidth="200.0">
+                              <ComboBox fx:id="hosBox" prefHeight="25.0" prefWidth="400.0">
                                  <HBox.margin>
                                     <Insets left="15.0" />
                                  </HBox.margin>

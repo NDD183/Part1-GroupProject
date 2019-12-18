@@ -1,6 +1,9 @@
 package Controller;
 
 import Model.Patient;
+import Model.Visit;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,19 +11,22 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import javafx.util.StringConverter;
 import okhttp3.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * This class created to handle the logic when user interact with update patient record UI (screen 2)
@@ -87,10 +93,26 @@ public class UpdateRecordController implements Initializable {
     DatePicker dobPicker;
     @FXML
     Button upBtn;
+    @FXML
+    TableView<Visit> visitTable;
+    @FXML
+    TableColumn<Visit, Long> idColumn;
+    @FXML
+    TableColumn<Visit, String> docColumn;
+    @FXML
+    TableColumn<Visit, String> cliColumn;
+    @FXML
+    TableColumn<Visit, String> dateColumn;
+    @FXML
+    Pagination visitPage;
 
     private ScreenController screenController = new ScreenController();
     private RecordController recordController = new RecordController();
     static Patient selectedPatient;
+    static Visit selectedVisit;
+    static Map<Long, Visit> selectedVisitMap = new HashMap<>();
+    static  List<Visit> visitList  =  new ArrayList<>();
+    private ObservableList<Visit> visitData;
     ToggleGroup toggleGroup = new ToggleGroup();
 
     /**Name: initialize
@@ -155,14 +177,28 @@ public class UpdateRecordController implements Initializable {
             }
         });
 
-
+        // Set visit table behaviour when user double click on each row
+        visitTable.setRowFactory(tv -> {
+            TableRow<Visit> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty()) ) {
+                    selectedVisit = row.getItem();
+                    System.out.println(selectedVisit.getId());
+                }
+            });
+            return row ;
+        });
 
         // Set group for two radio buttons
         maleBtn.setToggleGroup(toggleGroup);
         femaleBtn.setToggleGroup(toggleGroup);
         // Load patient info to UI
         loadPatientInfo();
+        // Load visit list of patient
+      //  System.out.println(visitList.get(0).getId());
+        loadVisitTable();
     }
+
     public void loadPatientInfo() {
         String names[] = selectedPatient.getName().split(" ");
         fnameField.setText(names[0]);
@@ -190,6 +226,34 @@ public class UpdateRecordController implements Initializable {
             titleBox.setValue("Mrs");
         }
         dobPicker.setPromptText(dobField.getText());
+    }
+
+    public void loadVisitTable() {
+        if (selectedVisitMap != null) {
+            // Transform map to array list
+         //  visitList = new ArrayList<>(selectedVisitMap.values());
+
+            // Add list of staff to the observableArrayList
+            visitData = FXCollections.observableArrayList(visitList);
+
+            // Set column in array to present as different attributes of staff
+            idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+            dateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+
+
+            // Only insert doctor name and clinic name to the table column
+            docColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getStaff().getName()));
+            cliColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getClinic().getName()));
+
+            // Set the created list to the staff table
+            visitTable.setItems(null);
+            visitTable.setItems(this.visitData);
+
+            // Applying pagination to record table
+            visitPage.setCurrentPageIndex(0);
+            visitPage.setPageCount(visitList.size() / 10 + 1);
+            visitPage.setPageFactory(this::createVisitPage);
+        }
     }
 
 
@@ -234,6 +298,15 @@ public class UpdateRecordController implements Initializable {
         screenController.closeScreen((Stage) upBtn.getScene().getWindow());
         screenController.openScreen("patientRecord");
     }
+
+    public void logClicked(MouseEvent mouseEvent) {
+        screenController.closeScreen((Stage) searchLab.getScene().getWindow());
+        screenController.openScreen("login");
+    }
+
+
+
+
 
     public Boolean validation() {
 
@@ -427,8 +500,21 @@ public class UpdateRecordController implements Initializable {
         return Boolean.TRUE;
         }
 
-    //Receive message from scene 1
+    private Node createVisitPage(int pageIndex) {
+        int fromIndex = pageIndex * 10;
+        int toIndex = Math.min(fromIndex + 10, visitList.size());
+        visitTable.setItems(FXCollections.observableArrayList(visitList.subList(fromIndex, toIndex)));
+        return visitTable;
+    }
+
+    //Receive message from record screen
     public void getSelectedPatient(Patient patient) {
         selectedPatient = patient;
     }
+    //Receive message from record screen
+    public void getVisitList(List<Visit> vlist) {
+        visitList = vlist;
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package Controller;
 
 
+import Implementation.HttpImpl;
 import Implementation.PatientImpl;
 import Implementation.VisitImpl;
 import Model.Clinic;
@@ -107,6 +108,7 @@ public class RecordController implements Initializable {
     // Initialize required variables
     static PatientImpl patientImpl = new PatientImpl();
     static VisitImpl visitImpl = new VisitImpl();
+    private HttpImpl httpImpl = new HttpImpl();
     static Map<Integer, Patient> patientMap =  new HashMap<>();
     static Map<Long, Visit> visitMap =  new HashMap<>();
     private Map<Integer, Patient> searchMap =  new HashMap<>();
@@ -117,10 +119,12 @@ public class RecordController implements Initializable {
     private  List<Visit> visitList ;
     private ScreenController screenController = new ScreenController();
     private Patient selectedPatient;
+    private Visit selectedVisit;
    // private final static int dataSize = 100;
     private final static int prowsPerPage = 10;
     private final static int vrowsPerPage = 5;
-    static  Set<Patient> patientSet = new HashSet<>();
+    static long loginClinicID;
+   // static  Set<Patient> patientSet = new HashSet<>();
     /**Name: initialize
      **Event: When the patientRecord.fxml is loaded
      **Purpose: Setting UI component before showing to user
@@ -131,11 +135,14 @@ public class RecordController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println(loginClinicID);
         // Set hover when moving mouse to specific label
         accLab.setCursor(Cursor.HAND);
         searchLab.setCursor(Cursor.HAND);
         editPatientLab.setCursor(Cursor.HAND);
         editVisitLab.setCursor(Cursor.HAND);
+        // Additional configure label
+        editPatientLab.setDisable(true);
         // Set value for comboBox
         typeBox.getItems().addAll("Name","ID");
         typeBox.setValue("Name");
@@ -160,7 +167,7 @@ public class RecordController implements Initializable {
         timeColumn.setStyle("-fx-alignment: CENTER;");
         dobColumn.setStyle("-fx-alignment: CENTER;");
         reasonColumn.setStyle("-fx-alignment: CENTER;");
-        // Set table behaviour when user click on each row
+        // Set record table behaviour when user click on each row
         recordTable.setRowFactory(tv -> {
             TableRow<Patient> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
@@ -169,13 +176,20 @@ public class RecordController implements Initializable {
                     System.out.println(selectedPatient.getName());
                     nameLab.setText(selectedPatient.getName());
                   // System.out.println(fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients/" +selectedPatient.getId()+ "/visits"));
-                    loadData("visit", fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients/" +selectedPatient.getId()+ "/visits"));
-                    try {
-                        reloadTable("visit", null);
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
+                    loadData("visit", httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients/" +selectedPatient.getId()+ "/visits"));
+                    reloadTable("visit", null);
                     visitMap = null;
+                }
+            });
+            return row ;
+        });
+        // Set visit table behaviour when user double click on each row
+        visitTable.setRowFactory(tv -> {
+            TableRow<Visit> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty()) ) {
+                    selectedVisit = row.getItem();
+                    System.out.println(selectedVisit.getStartDate());
                 }
             });
             return row ;
@@ -184,30 +198,133 @@ public class RecordController implements Initializable {
         // Perform different function based on response code
         // 101: fetch again all patient data  - 202: use again the last fetch data
         if(responseCode == 101){
-            // Get patient records from database
-           // System.out.println(fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients"));
             // Add data to map
-            loadData("patient", fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients"));
+            // Get all patient: http://visiderm.herokuapp.com/api/v1/patients
+            // Get patient by clinic: http://visiderm.herokuapp.com/api/v1/clinic/1/patient
+           loadData("patient", httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/clinic/"+loginClinicID+"/patients"));
         }
         // Load Record to UI
-        try {
             reloadTable("patient", patientMap);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
     }
 
+
+    // ALL EVENT FUNCTIONS
+
+    /**Name: initialize
+     **Event: When the patientRecord.fxml is loaded
+     **Purpose: Setting UI component before showing to user
+     **Passed: All UI components named correctly
+     **Returns: void
+     **Input: void // Output: The record  UI -  the patientRecord.fxml is loaded successfully
+     **Effect: The method help user to additionally config UI
+     */
+    public void accessClicked(MouseEvent mouseEvent) {
+        System.out.println("access clicked");
+    }
+    /**Name: initialize
+     **Event: When the patientRecord.fxml is loaded
+     **Purpose: Setting UI component before showing to user
+     **Passed: All UI components named correctly
+     **Returns: void
+     **Input: void // Output: The record  UI -  the patientRecord.fxml is loaded successfully
+     **Effect: The method help user to additionally config UI
+     */
+    public void searchClicked(MouseEvent mouseEvent) {
+        screenController.closeScreen((Stage) searchLab.getScene().getWindow());
+        screenController.openScreen("lesionsSearch");
+        System.out.println("search clicked");
+    }
+    /**Name: initialize
+     **Event: When the patientRecord.fxml is loaded
+     **Purpose: Setting UI component before showing to user
+     **Passed: All UI components named correctly
+     **Returns: void
+     **Input: void // Output: The record  UI -  the patientRecord.fxml is loaded successfully
+     **Effect: The method help user to additionally config UI
+     */
+    public void searchPressed(ActionEvent actionEvent)  {
+        if(!searchField.getText().equals("")) {
+            if(typeBox.getSelectionModel().getSelectedItem().equals("ID")) {
+               String patientInfo = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients/"+searchField.getText());
+                if(!patientInfo.equals("Error")) {
+                    JsonObject patient = new JsonParser().parse(patientInfo).getAsJsonObject();
+
+                    String[] patientInfos = httpImpl.exactHttpResponse("patient", patient);
+                    addPatient("search", Integer.parseInt(patientInfos[0]), patientInfos[1]+" "+patientInfos[2],patientInfos[3],
+                            patientInfos[4],patientInfos[5], patientInfos[6],patientInfos[7],patientInfos[8], patientInfos[9],
+                            patientInfos[10], patientInfos[11] ,patientInfos[12], patientInfos[13],patientInfos[14],
+                            patientInfos[15],patientInfos[16], patientInfos[17], patientInfos[18]);
+                    reloadTable("patient",searchMap);
+                }
+            }
+        } else {
+            reloadTable("patient",patientMap);
+//            displayErrorAlert("Message from system", "Invalid ID/Name", "Please enter a valid patient ID " +
+//                    "or name to use search function");
+        }
+    }
+
+    /**Name: initialize
+     **Event: When the patientRecord.fxml is loaded
+     **Purpose: Setting UI component before showing to user
+     **Passed: All UI components named correctly
+     **Returns: void
+     **Input: void // Output: The record  UI -  the patientRecord.fxml is loaded successfully
+     **Effect: The method help user to additionally config UI
+     */
+    public void editRecordClicked(MouseEvent mouseEvent) {
+        UpdateRecordController updateController = new UpdateRecordController();
+        if(selectedPatient != null) {
+            screenController.closeScreen((Stage) hosNameLab.getScene().getWindow());
+            updateController.getSelectedPatient(selectedPatient);
+            System.out.println(visitList.get(0).getId());
+            updateController.getVisitList(visitList);
+            screenController.openScreen("editRecord");
+        } else {
+            displayErrorAlert("Message from system", "Error", "Please select one specific patient"
+                                  +" showed in above table to edit his/her record");
+        }
+        System.out.println("edit record clicked");
+    }
+    /**Name: initialize
+     **Event: When the patientRecord.fxml is loaded
+     **Purpose: Setting UI component before showing to user
+     **Passed: All UI components named correctly
+     **Returns: void
+     **Input: void // Output: The record  UI -  the patientRecord.fxml is loaded successfully
+     **Effect: The method help user to additionally config UI
+     */
+    public void editVisitClicked(MouseEvent mouseEvent) {
+
+        System.out.println("edit visit clicked");
+    }
+
+    public void logClicked(MouseEvent mouseEvent) {
+        screenController.closeScreen((Stage) searchLab.getScene().getWindow());
+        screenController.openScreen("login");
+    }
+
+
+// ALL SUPPORT FUNCTIONS
+
+    /**Name: initialize
+     **Event: When the patientRecord.fxml is loaded
+     **Purpose: Setting UI component before showing to user
+     **Passed: All UI components named correctly
+     **Returns: void
+     **Input: void // Output: The record  UI -  the patientRecord.fxml is loaded successfully
+     **Effect: The method help user to additionally config UI
+     */
 
     public void loadData(String type, String response) {
 
         JsonObject jsonObject = new JsonParser().parse(response).getAsJsonObject();
         JsonArray contentResponse = (JsonArray) jsonObject.get("content");
-      //  System.out.println(contentResponse.size());
-       // System.out.println(contentResponse.get(10).getAsJsonObject().get("id"));
+        //  System.out.println(contentResponse.size());
+        // System.out.println(contentResponse.get(10).getAsJsonObject().get("id"));
 
         for (int i = 0; i < contentResponse.size(); i++) {
-            String[] infos = exactHttpResponse(type, contentResponse.get(i).getAsJsonObject());
+            String[] infos = httpImpl.exactHttpResponse(type, contentResponse.get(i).getAsJsonObject());
 
             if (type.equals("patient")) {
                 int pid;
@@ -231,7 +348,7 @@ public class RecordController implements Initializable {
                 clinic.setName(String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("name")));
 
 
-                String[] patientInfo = exactHttpResponse("patient", contentResponse.get(i).getAsJsonObject().get("patient").getAsJsonObject());
+                String[] patientInfo = httpImpl.exactHttpResponse("patient", contentResponse.get(i).getAsJsonObject().get("patient").getAsJsonObject());
                 Patient patient = addPatient("", Integer.parseInt(patientInfo[0]), patientInfo[1] + " " + patientInfo[2], patientInfo[3],
                         patientInfo[4], patientInfo[5], patientInfo[6], patientInfo[7], patientInfo[8], patientInfo[9],
                         patientInfo[10], patientInfo[11], patientInfo[12], patientInfo[13], patientInfo[14],
@@ -257,33 +374,13 @@ public class RecordController implements Initializable {
         }
     }
 
-    public  String[] exactHttpResponse(String type, JsonObject patient) {
-        String[] infos = {};
-        if(type.equals("patient")) {
-            infos = new String[]{"id", "firstName", "lastName","title", "sex", "maritalStatus", "dob", "address", "suburb", "postcode",
-                    "country", "homePhone", "officePhone", "mobilePhone", "fax", "email", "occupation", "nextToKin", "kinPhoneNumber"};
-        }
-        if(type.equals("visit")) {
-            infos = new String[]{"id", "startDate", "endDate", "reason", "note"};
-
-        }
-            for (int i = 0; i < infos.length; i++) {
-                String info = String.valueOf(patient.get(infos[i]));
-                if(i != 0) {
-                    info = info.substring(1, info.length() - 1);
-                }
-                infos[i] = info;
-        }
-        return infos;
-    }
-
     /**Name: addPatient
      ** Purpose: This method helps to add staff to system from the provided file (execute in first run of application only)
      ** @return String - contains "OK": successfully add staff info
      */
     public Patient addPatient(String type, int id, String name, String title, String sex, String maritalStatus, String dob,
-                             String address, String sub, String postcode, String country, String hphone, String ophone,
-                             String mphone,String fax, String email, String occupation, String ntk, String kphone){
+                              String address, String sub, String postcode, String country, String hphone, String ophone,
+                              String mphone,String fax, String email, String occupation, String ntk, String kphone){
         Patient patient = new Patient(id, name, title, sex, maritalStatus, dob, address, sub, postcode, country, hphone,
                 ophone, mphone, fax, email, occupation, ntk, kphone);
 //        patient.setId(id);
@@ -317,7 +414,7 @@ public class RecordController implements Initializable {
                 patientMap = patientImpl.addPatient(patient, patientMap);
             }
         }
-     //   patientSet.add(patient);
+        //   patientSet.add(patient);
         return patient;
     }
 
@@ -328,16 +425,16 @@ public class RecordController implements Initializable {
     public String addVisit(long id, String startDate, String endDate, Clinic clinic, Patient patient, Staff staff, String reason, String note){
 
         // Transform start date to date and time
-        String[] startDateArrr = startDate.split("T");
-        String[] endDateArrr = endDate.split("T");
-        String duration = startDateArrr[1].substring(0, 8) + " - " +endDateArrr[1].substring(0, 8);
+        String[] startDateArr = startDate.split("T");
+        String[] endDateArr = endDate.split("T");
+        String duration = startDateArr[1].substring(0, 8) + " - " +endDateArr[1].substring(0, 8);
 
         // Create new visit model
         Visit visit = new Visit();
 
         visit.setId(id);
-        visit.setStartDate(startDateArrr[0]);
-        visit.setEndDate(endDateArrr[0]);
+        visit.setStartDate(startDateArr[0]);
+        visit.setEndDate(endDateArr[0]);
         visit.setClinic(clinic);
         visit.setPatient(patient);
         visit.setStaff(staff);
@@ -356,7 +453,7 @@ public class RecordController implements Initializable {
     /**Name: loadRecord
      ** Purpose: This method helps to load all patient record info to UI
      */
-    public void reloadTable(String type, Map<Integer, Patient> map) throws ParseException {
+    public void reloadTable(String type, Map<Integer, Patient> map)  {
         if(type.equals("patient")) {
             if (map != null) {
                 // Transform map to array list
@@ -390,23 +487,20 @@ public class RecordController implements Initializable {
                 // Transform map to array list
                 visitList = new ArrayList<>(visitMap.values());
 
-                // Find min max of ID in visit list
+                // Find the start date and end date of list of visit
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 Date startDate = new Date();
                 Date endDate = new Date();
                 int startIndex = 0;
                 int endIndex = 0;
                 try {
-                     startDate = dateFormat.parse(visitList.get(0).getStartDate());
-                     endDate = dateFormat.parse(visitList.get(0).getStartDate());
-                } catch (ParseException e) {
-                     e.printStackTrace();
-                }
+                    startDate = dateFormat.parse(visitList.get(0).getStartDate());
+                    endDate = dateFormat.parse(visitList.get(0).getStartDate());
+                } catch (ParseException e) { e.printStackTrace();}
 
                 for(int i =0; i < visitList.size(); i++) {
                     try {
                         Date currentDate = dateFormat.parse(visitList.get(i).getStartDate());
-                       //System.out.println(currentDate);
                         if(startDate.compareTo(currentDate) > 0) {
                             startIndex = i;
                             startDate = currentDate;
@@ -415,9 +509,7 @@ public class RecordController implements Initializable {
                             endIndex = i;
                             endDate = currentDate;
                         }
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
+                    } catch (ParseException e) { e.printStackTrace(); }
                 }
 
                 // Insert value for start and end date label
@@ -433,6 +525,7 @@ public class RecordController implements Initializable {
                 timeColumn.setCellValueFactory(new PropertyValueFactory<>("duration"));
                 reasonColumn.setCellValueFactory(new PropertyValueFactory<>("reason"));
 
+                // Only insert doctor name and clinic name to the table column
                 docColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Visit, String>, ObservableValue<String>>() {
                     @Override
                     public ObservableValue<String> call(TableColumn.CellDataFeatures<Visit, String> param) {
@@ -454,61 +547,30 @@ public class RecordController implements Initializable {
                 visitPage.setPageCount(visitList.size() / vrowsPerPage + 1);
                 visitPage.setPageFactory(this::createVisitPage);
             }
-
+            editPatientLab.setDisable(false);
         }
     }
-
-
-
-    public void accessClicked(MouseEvent mouseEvent) {
-        System.out.println("access clicked");
+    /**Name: createPatientPage
+     ** Purpose: This method helps to display alert in this screen
+     * @param pageIndex: contains the information of the context section in alert dialog
+     ** @return void
+     */
+    private Node createPatientPage(int pageIndex) {
+        int fromIndex = pageIndex * prowsPerPage;
+        int toIndex = Math.min(fromIndex + prowsPerPage, patientList.size());
+        recordTable.setItems(FXCollections.observableArrayList(patientList.subList(fromIndex, toIndex)));
+        return recordTable;
     }
-
-    public void searchClicked(MouseEvent mouseEvent) {
-        screenController.closeScreen((Stage) searchLab.getScene().getWindow());
-        screenController.openScreen("lesionsSearch");
-        System.out.println("search clicked");
-    }
-
-    public void searchPressed(ActionEvent actionEvent) throws ParseException {
-        if(!searchField.getText().equals("")) {
-            if(typeBox.getSelectionModel().getSelectedItem().equals("ID")) {
-               String patientInfo = fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients/"+searchField.getText());
-                if(!patientInfo.equals("Error")) {
-                    JsonObject patient = new JsonParser().parse(patientInfo).getAsJsonObject();
-
-                    String[] patientInfos = exactHttpResponse("patient", patient);
-                    addPatient("search", Integer.parseInt(patientInfos[0]), patientInfos[1]+" "+patientInfos[2],patientInfos[3],
-                            patientInfos[4],patientInfos[5], patientInfos[6],patientInfos[7],patientInfos[8], patientInfos[9],
-                            patientInfos[10], patientInfos[11] ,patientInfos[12], patientInfos[13],patientInfos[14],
-                            patientInfos[15],patientInfos[16], patientInfos[17], patientInfos[18]);
-                    reloadTable("patient",searchMap);
-                }
-            }
-        } else {
-            reloadTable("patient",patientMap);
-//            displayErrorAlert("Message from system", "Invalid ID/Name", "Please enter a valid patient ID " +
-//                    "or name to use search function");
-        }
-    }
-
-
-    public void editRecordClicked(MouseEvent mouseEvent) {
-        UpdateRecordController updateController = new UpdateRecordController();
-        if(selectedPatient != null) {
-            screenController.closeScreen((Stage) hosNameLab.getScene().getWindow());
-            updateController.getSelectedPatient(selectedPatient);
-            screenController.openScreen("editRecord");
-        } else {
-            displayErrorAlert("Message from system", "Error", "Please select one specific patient"
-                                  +" showed in above table to edit his/her record");
-        }
-        System.out.println("edit record clicked");
-    }
-
-    public void editVisitClicked(MouseEvent mouseEvent) {
-
-        System.out.println("edit visit clicked");
+    /**Name: displayAlert
+     ** Purpose: This method helps to display alert in this screen
+     * @param pageIndex: contains the information of the context section in alert dialog
+     ** @return void
+     */
+    private Node createVisitPage(int pageIndex) {
+        int fromIndex = pageIndex * vrowsPerPage;
+        int toIndex = Math.min(fromIndex + vrowsPerPage, visitList.size());
+        visitTable.setItems(FXCollections.observableArrayList(visitList.subList(fromIndex, toIndex)));
+        return visitTable;
     }
 
     /**Name: displayAlert
@@ -524,59 +586,14 @@ public class RecordController implements Initializable {
         alert.showAndWait();
     }
 
-    /**Name: fetchGetRequest
-     ** Purpose: This method helps to load all patient record info to UI
-     */
-    public String fetchGetRequest(String url) {
-        OkHttpClient client = new OkHttpClient();
-        String message = "";
-
-        Request request = new Request.Builder()
-                .url(url)
-                .get()
-                .addHeader("User-Agent", "PostmanRuntime/7.20.1")
-                .addHeader("Accept", "*/*")
-                .addHeader("Cache-Control", "no-cache")
-                .addHeader("Postman-Token", "0f0df8a4-6f13-4ae0-9168-39a78469c3d5,e4d41edb-130b-43ce-bbe6-c219da9640b8")
-                .addHeader("Host", "visiderm.herokuapp.com")
-                .addHeader("Accept-Encoding", "gzip, deflate")
-                .addHeader("Connection", "keep-alive")
-                .addHeader("cache-control", "no-cache")
-                .build();
-
-        try (Response response = client.newCall(request).execute()) {
-
-            if (!response.isSuccessful()) {
-                message =  "Unexpected code " + response;
-            } else {
-                // Get response body
-                message =  Objects.requireNonNull(response.body().string());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return  message;
-    }
-
-
-    private Node createPatientPage(int pageIndex) {
-        int fromIndex = pageIndex * prowsPerPage;
-        int toIndex = Math.min(fromIndex + prowsPerPage, patientList.size());
-        recordTable.setItems(FXCollections.observableArrayList(patientList.subList(fromIndex, toIndex)));
-        return recordTable;
-    }
-
-    private Node createVisitPage(int pageIndex) {
-        int fromIndex = pageIndex * vrowsPerPage;
-        int toIndex = Math.min(fromIndex + vrowsPerPage, visitList.size());
-        visitTable.setItems(FXCollections.observableArrayList(visitList.subList(fromIndex, toIndex)));
-        return visitTable;
-    }
 
     //Receive message from scene 2
     public void getLoadCode(int code) {
         responseCode = code;
     }
-
+    //Receive message from login screen
+    public void getClinicID(String cid) {
+        loginClinicID = Long.parseLong(cid);
+    }
 
 }

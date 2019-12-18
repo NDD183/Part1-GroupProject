@@ -28,17 +28,32 @@
                   <Insets top="15.0" />
                </padding>
                <children>
-                  <Label fx:id="backLab" onMouseClicked="#backClicked" text="Back to internal system " underline="true" wrapText="true">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets left="5.0" top="10.0" />
-                     </padding>
-                  </Label>
+                  <VBox prefHeight="54.0" prefWidth="154.0">
+                     <children>
+                        <Label fx:id="backLab" onMouseClicked="#backClicked" prefHeight="42.0" prefWidth="150.0" text="Back to internal system " underline="true" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="logLab" layoutX="10.0" layoutY="10.0" onMouseClicked="#logClicked" text="Log out" underline="true" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
                   <Label fx:id="hosNameLab" alignment="CENTER" contentDisplay="CENTER" text="SIR JOSH MONASH HOSPITAL" textAlignment="CENTER" textFill="#da0707" wrapText="true">
                      <padding>
-                        <Insets left="100.0" right="15.0" top="5.0" />
+                        <Insets left="60.0" right="15.0" top="5.0" />
                      </padding>
                      <font>
                         <Font name="System Bold" size="20.0" />
@@ -80,6 +95,9 @@
          <font>
             <Font size="15.0" />
          </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
       </TitledPane>
    </children>
 </AnchorPane>

@@ -7,8 +7,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="898.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UpdateRecordController">
+<AnchorPane prefHeight="922.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UpdateRecordController">
    <children>
       <VBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="800.0">
          <children>
@@ -64,7 +64,7 @@
             <Insets left="15.0" right="5.0" />
          </padding>
       </VBox>
-      <HBox layoutX="10.0" layoutY="100.0" prefWidth="780.0">
+      <HBox layoutX="10.0" layoutY="100.0" prefHeight="822.0" prefWidth="900.0">
          <children>
             <VBox prefWidth="540.0">
                <HBox.margin>
@@ -396,7 +396,7 @@
                   </TitledPane>
                </children>
             </VBox>
-            <VBox prefHeight="688.0" prefWidth="210.0">
+            <VBox prefHeight="807.0" prefWidth="336.0">
                <HBox.margin>
                   <Insets bottom="15.0" left="10.0" />
                </HBox.margin>
@@ -429,6 +429,14 @@
                                     <Insets left="15.0" top="15.0" />
                                  </padding>
                               </Label>
+                              <Label fx:id="logoutLab" layoutX="2.0" layoutY="94.0" onMouseClicked="#logClicked" prefHeight="27.0" prefWidth="205.0" text="Log Out &gt;" underline="true" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="15.0" top="15.0" />
+                                 </padding>
+                              </Label>
                            </children>
                         </AnchorPane>
                     </content>
@@ -437,14 +445,15 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="208.0">
                            <children>
-                              <ScrollBar layoutX="185.0" orientation="VERTICAL" prefHeight="485.0" prefWidth="18.0" />
-                              <Pagination layoutX="4.0" layoutY="513.0" maxPageIndicatorCount="5" pageCount="10" prefHeight="45.0" prefWidth="200.0">
-                                 <padding>
-                                    <Insets left="15.0" right="15.0" />
-                                 </padding>
-                              </Pagination>
-                              <TextArea layoutY="7.0" prefHeight="200.0" prefWidth="174.0" />
-                              <TextArea layoutX="-1.0" layoutY="228.0" prefHeight="200.0" prefWidth="176.0" />
+                              <TableView fx:id="visitTable" layoutX="4.0" prefHeight="497.0" prefWidth="326.0" AnchorPane.topAnchor="5.0">
+                                <columns>
+                                  <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                                  <TableColumn fx:id="dateColumn" prefWidth="92.0" text="Date" />
+                                    <TableColumn fx:id="docColumn" prefWidth="83.0" text="Doctor" />
+                                    <TableColumn fx:id="cliColumn" prefWidth="99.0" text="Clinic" />
+                                </columns>
+                              </TableView>
+                              <Pagination fx:id="visitPage" layoutX="5.0" layoutY="14.0" maxPageIndicatorCount="5" pageCount="10" prefHeight="550.0" prefWidth="326.0" />
                            </children>
                         </AnchorPane>
                      </content>

@@ -77,5 +77,9 @@ public class LesionSearchController implements Initializable {
         System.out.println("access  clicked");
     }
 
+    public void logClicked(MouseEvent mouseEvent) {
+        screenController.closeScreen((Stage) hosNameLab.getScene().getWindow());
+        screenController.openScreen("login");
+    }
 
 }
