@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="898.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UpdateRecordController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="800.0">
+         <children>
+            <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="800.0" text="INTERNAL CENTRAL PATIENT DATABASE" textFill="#d30c0c" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Label>
+            <HBox prefHeight="92.0" prefWidth="200.0">
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+               <children>
+                  <Label fx:id="accLab" onMouseClicked="#accessClicked" text="Access other hospitals in system" underline="true" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="hosNameLab" alignment="CENTER" contentDisplay="CENTER" text="SIR JOSH MONASH HOSPITAL" textAlignment="CENTER" textFill="#da0707" wrapText="true">
+                     <padding>
+                        <Insets left="60.0" right="15.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="searchLab" layoutX="10.0" layoutY="25.0" onMouseClicked="#searchClicked" text="Search for lessions" underline="true" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="100.0" top="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="15.0" right="5.0" />
+         </padding>
+      </VBox>
+      <HBox layoutX="10.0" layoutY="100.0" prefWidth="780.0">
+         <children>
+            <VBox prefWidth="540.0">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" />
+               </HBox.margin>
+               <children>
+                  <TitledPane animated="false" prefWidth="540.0" text="Patient Record">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="776.0" prefWidth="538.0">
+                           <children>
+                              <VBox layoutX="52.2" prefHeight="722.0" prefWidth="121.0" AnchorPane.leftAnchor="30.0">
+                                 <children>
+                                    <Label alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="100.0" text="First Name">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="59.0" prefHeight="30.0" prefWidth="100.0" text="Last Name">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="57.0" prefHeight="30.0" text="Patient ID Number" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="74.0" prefHeight="30.0" prefWidth="100.0" text="Title">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="295.0" prefHeight="30.0" prefWidth="100.0" text="Date of birth">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="91.0" prefHeight="30.0" prefWidth="100.0" text="Marital Status">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="108.0" prefHeight="30.0" prefWidth="100.0" text="Street Address">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="125.0" prefHeight="30.0" prefWidth="100.0" text="Suburd">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="142.0" prefHeight="30.0" prefWidth="100.0" text="Country">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="159.0" prefHeight="30.0" prefWidth="100.0" text="Home Phone">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="176.0" prefHeight="30.0" prefWidth="100.0" text="Office Phone">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="193.0" prefHeight="30.0" prefWidth="100.0" text="Mobile Phone">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="210.0" prefHeight="30.0" prefWidth="100.0" text="Fax Number">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="227.0" prefHeight="30.0" prefWidth="100.0" text="Email Address">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="244.0" prefHeight="30.0" prefWidth="100.0" text="Occupation">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="261.0" prefHeight="30.0" prefWidth="100.0" text="Next To Kin">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="278.0" prefHeight="30.0" prefWidth="100.0" text="Contact Number">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="15.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="174.2" prefHeight="663.0" prefWidth="370.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="10.0">
+                                 <children>
+                                    <TextField fx:id="fnameField" prefWidth="370.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin></TextField>
+                                    <TextField fx:id="lnameField" layoutX="10.0" layoutY="25.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="pidField" layoutX="10.0" layoutY="57.0" prefWidth="80.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <HBox prefWidth="370.0">
+                                       <children>
+                                          <ComboBox fx:id="titleBox" prefWidth="100.0">
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Label text="Sex" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets left="60.0" top="5.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <RadioButton fx:id="maleBtn" mnemonicParsing="false" prefHeight="30.0" text="Male" wrapText="true">
+                                             <padding>
+                                                <Insets left="15.0" />
+                                             </padding>
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin>
+                                          </RadioButton>
+                                          <RadioButton fx:id="femaleBtn" layoutX="189.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" text="Female" wrapText="true">
+                                             <padding>
+                                                <Insets left="15.0" />
+                                             </padding>
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin>
+                                          </RadioButton>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="27.0" prefWidth="370.0">
+                                       <children>
+                                          <TextField fx:id="dobField" prefHeight="30.0" prefWidth="330.0">
+                                             <HBox.margin>
+                                                <Insets right="15.0" top="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <DatePicker fx:id="dobPicker" prefHeight="30.0">
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin></DatePicker>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <ComboBox fx:id="statusBox" prefHeight="30.0" prefWidth="250.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <TextField fx:id="addField" layoutX="10.0" layoutY="89.0" prefHeight="30.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <HBox prefHeight="27.0" prefWidth="370.0">
+                                       <children>
+                                          <TextField fx:id="subField" prefHeight="30.0" prefWidth="150.0">
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Label prefHeight="30.0" text="Post Code" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets left="20.0" top="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="codeField" prefHeight="30.0" prefWidth="110.0">
+                                             <HBox.margin>
+                                                <Insets left="5.0" top="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <ComboBox fx:id="countryBox" prefHeight="30.0" prefWidth="150.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <TextField fx:id="hphoneField" prefHeight="31.0" prefWidth="144.0">
+                                       <VBox.margin>
+                                          <Insets right="200.0" top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="ophoneField" layoutX="10.0" layoutY="338.0" prefHeight="30.0">
+                                       <VBox.margin>
+                                          <Insets right="200.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="mphoneField" layoutX="10.0" layoutY="365.0" prefHeight="30.0">
+                                       <VBox.margin>
+                                          <Insets right="200.0" top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="faxField" layoutX="10.0" layoutY="392.0" prefHeight="30.0">
+                                       <VBox.margin>
+                                          <Insets right="200.0" top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="emailField" layoutX="10.0" layoutY="419.0" prefHeight="30.0">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <ComboBox fx:id="occBox" layoutX="10.0" layoutY="301.0" prefHeight="30.0" prefWidth="150.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <TextField fx:id="kinField" layoutX="10.0" layoutY="486.0" prefHeight="30.0">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="cnumField" layoutX="10.0" layoutY="449.0" prefHeight="30.0">
+                                       <VBox.margin>
+                                          <Insets right="220.0" top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="upBtn" mnemonicParsing="false" onAction="#updatePressed" prefHeight="27.0" prefWidth="80.0" text="Update">
+                                             <HBox.margin>
+                                                <Insets right="15.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelPressed" prefHeight="27.0" prefWidth="80.0" text="Cancel" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TitledPane>
+               </children>
+            </VBox>
+            <VBox prefHeight="688.0" prefWidth="210.0">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="10.0" />
+               </HBox.margin>
+               <children>
+                  <TitledPane animated="false" prefHeight="181.0" text="Links">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="208.0">
+                           <children>
+                              <Label fx:id="createVisitLab" layoutX="2.0" layoutY="-2.0" onMouseClicked="#newVisitClicked" prefHeight="27.0" prefWidth="205.0" text="Create new Visit Record &gt;" underline="true" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="15.0" top="15.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="editPatientLab" layoutX="2.0" layoutY="30.0" onMouseClicked="#editPatientClicked" prefHeight="27.0" prefWidth="205.0" text="Edit Patient Record &gt;" underline="true" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="15.0" top="15.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="createPatientLab" layoutX="2.0" layoutY="62.0" onMouseClicked="#createPatientClicked" prefHeight="27.0" prefWidth="205.0" text="Create new Patient Record &gt;" underline="true" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="15.0" top="15.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" layoutX="10.0" layoutY="10.0" text="Visit Entries">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="208.0">
+                           <children>
+                              <ScrollBar layoutX="185.0" orientation="VERTICAL" prefHeight="485.0" prefWidth="18.0" />
+                              <Pagination layoutX="4.0" layoutY="513.0" maxPageIndicatorCount="5" pageCount="10" prefHeight="45.0" prefWidth="200.0">
+                                 <padding>
+                                    <Insets left="15.0" right="15.0" />
+                                 </padding>
+                              </Pagination>
+                              <TextArea layoutY="7.0" prefHeight="200.0" prefWidth="174.0" />
+                              <TextArea layoutX="-1.0" layoutY="228.0" prefHeight="200.0" prefWidth="176.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </TitledPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
