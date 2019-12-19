@@ -7,6 +7,13 @@ public class Clinic {
 
     private String city;
 
+    public Clinic(Long id, String name, String city, String country) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+        this.country = country;
+    }
+
     private String country;
 
     public Long getId() {

@@ -2,300 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aba05673-3a83-458c-8953-c778597137e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Implementation/ClinicImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Implementation/HttpImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024306.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024307.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024308.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024309.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024310.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024311.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024312.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024313.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024314.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024315.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024316.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024317.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024318.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024319.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024320.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024321.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024322.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024323.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024324.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024325.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024326.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024327.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024328.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024329.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024330.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024331.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024332.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024333.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024334.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024335.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024336.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024337.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024338.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024339.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024340.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024341.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024342.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024343.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024344.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024345.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024346.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024347.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024348.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024349.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024350.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024351.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024352.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024353.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024354.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024355.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024356.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024357.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024358.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024359.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024360.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024361.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024362.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024363.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024364.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024365.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024366.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024367.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024368.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024369.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024370.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024371.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024372.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024373.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024374.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024375.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024376.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024377.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024378.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024379.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024380.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024381.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024382.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024383.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024384.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024385.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024386.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024387.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024388.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024389.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024390.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024391.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024392.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024393.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024394.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024395.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024396.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024397.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024398.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024399.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024400.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024401.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024402.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024403.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024404.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024405.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024406.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024407.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024408.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024409.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024410.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024411.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024412.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024413.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024414.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024415.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024416.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024417.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024418.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024419.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024420.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024421.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024422.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024423.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024424.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024425.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024426.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024427.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024428.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024429.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024430.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024431.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024432.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024433.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024434.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024435.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024436.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024437.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024438.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024439.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024440.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024441.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024442.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024443.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024444.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024445.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024446.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024447.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024448.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024449.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024450.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024451.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024452.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024453.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024454.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024455.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024456.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024457.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024458.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024459.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024460.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024461.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024462.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024463.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024464.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024465.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024466.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024467.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024468.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024469.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024470.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024471.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024472.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024473.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024474.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024475.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024476.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024477.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024478.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024479.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024480.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024481.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024482.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024483.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024484.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024485.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024486.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024487.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024488.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024489.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024490.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024491.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024492.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024493.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024494.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024495.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024496.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024497.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024498.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024499.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024501.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024502.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024503.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024504.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024505.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024506.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024507.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024508.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024509.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024510.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024511.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024512.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024513.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024514.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024515.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024516.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024517.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024518.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024519.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024520.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024521.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024522.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024523.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024524.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024525.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024526.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024527.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024528.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024529.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024530.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024531.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024532.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024533.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024534.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024535.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024536.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024537.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024538.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024539.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024540.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024541.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024542.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024543.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024544.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024545.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024546.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024547.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024548.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024549.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024550.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024551.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024552.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024553.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024554.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024555.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024556.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024557.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024558.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024559.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024560.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024561.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024562.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024563.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024564.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024565.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024566.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024567.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024568.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024569.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024570.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024571.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024572.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024573.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024574.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024575.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024576.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024577.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024578.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024579.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024580.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024581.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024582.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024583.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024584.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024585.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024586.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024587.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024588.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024589.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024590.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024591.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024592.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024593.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Lesions/ISIC_0024594.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Implementation/LesionHistoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Implementation/LesionImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/LesionImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LesionListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LesionListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LesionResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LesionResultController.java" afterDir="false" />
@@ -303,12 +12,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/RecordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UpdateRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UpdateRecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/editRecord.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/editRecord.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementation/HttpImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementation/HttpImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Clinic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Clinic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Lesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Lesion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/LesionHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/LesionHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/lesionsList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/lesionsList.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/lesionsResult.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/lesionsResult.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/lesionsSearch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/lesionsSearch.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/patientRecord.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/patientRecord.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/LesionListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LesionListController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/LesionResultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LesionResultController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/LesionSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LesionSearchController.class" afterDir="false" />
@@ -318,12 +27,13 @@
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/RecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/RecordController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/UpdateRecordController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/UpdateRecordController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/UpdateRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/UpdateRecordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/editRecord.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/editRecord.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI/lesionsList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/lesionsList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/lesionsResult.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/lesionsResult.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI/lesionsSearch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/lesionsSearch.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/patientRecord.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/patientRecord.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Implementation/HttpImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Implementation/HttpImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Clinic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Clinic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Lesion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Lesion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/LesionHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/LesionHistory.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -401,7 +111,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576680446127</updated>
-      <workItem from="1576680450997" duration="13076000" />
+      <workItem from="1576680450997" duration="13628000" />
+      <workItem from="1576729351373" duration="13612000" />
+      <workItem from="1576750113291" duration="21899000" />
     </task>
     <servers />
   </component>
@@ -413,7 +125,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

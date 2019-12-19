@@ -21,16 +21,16 @@ public class Lesion {
         this.id = id;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     public Visit getVisit() {
         return visit;
     }
 
     public void setVisit(Visit visit) {
         this.visit = visit;
-    }
-
-    public String getLocation() {
-        return location;
     }
 
     public void setLocation(String location) {

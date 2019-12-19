@@ -341,12 +341,10 @@ public class RecordController implements Initializable {
             }
             if(type.equals("visit")) {
 
-                Clinic clinic = new Clinic();
-                clinic.setId(Long.parseLong(String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("id"))));
-                clinic.setCity(String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("city")));
-                clinic.setCountry(String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("country")));
-                clinic.setName(String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("name")));
-
+                Clinic clinic = new Clinic(Long.parseLong(String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("id"))),
+                        String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("city")),
+                        String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("country")),
+                        String.valueOf(contentResponse.get(i).getAsJsonObject().get("clinic").getAsJsonObject().get("name")));
 
                 String[] patientInfo = httpImpl.exactHttpResponse("patient", contentResponse.get(i).getAsJsonObject().get("patient").getAsJsonObject());
                 Patient patient = addPatient("", Integer.parseInt(patientInfo[0]), patientInfo[1] + " " + patientInfo[2], patientInfo[3],
@@ -538,6 +536,7 @@ public class RecordController implements Initializable {
                         return new SimpleStringProperty(param.getValue().getClinic().getName());
                     }
                 });
+
                 // Set the created list to the staff table
                 visitTable.setItems(null);
                 visitTable.setItems(this.visitData);

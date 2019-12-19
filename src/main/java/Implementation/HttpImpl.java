@@ -1,9 +1,7 @@
 package Implementation;
 
 import com.google.gson.JsonObject;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import okhttp3.*;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -31,6 +29,12 @@ public class HttpImpl {
         if(type.equals("clinic")) {
             infos = new String[]{"id", "name", "city", "country"};
         }
+        if(type.equals("lesion")) {
+            infos = new String[]{"id", "location", "status"};
+        }
+        if(type.equals("lesionHistory")) {
+            infos = new String[]{"id", "date", "note", "size","type", "diagnoses","color"};
+        }
         for (int i = 0; i < infos.length; i++) {
             String info = String.valueOf(patient.get(infos[i]));
             if(i != 0) {
@@ -45,20 +49,14 @@ public class HttpImpl {
      ** Purpose: This method helps to load all patient record info to UI
      */
     public String fetchGetRequest(String url) {
-        OkHttpClient client = new OkHttpClient();
+
         String message = "";
 
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
         Request request = new Request.Builder()
                 .url(url)
-                .get()
-                .addHeader("User-Agent", "PostmanRuntime/7.20.1")
-                .addHeader("Accept", "*/*")
-                .addHeader("Cache-Control", "no-cache")
-                .addHeader("Postman-Token", "0f0df8a4-6f13-4ae0-9168-39a78469c3d5,e4d41edb-130b-43ce-bbe6-c219da9640b8")
-                .addHeader("Host", "visiderm.herokuapp.com")
-                .addHeader("Accept-Encoding", "gzip, deflate")
-                .addHeader("Connection", "keep-alive")
-                .addHeader("cache-control", "no-cache")
+                .method("GET", null)
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
@@ -74,4 +72,29 @@ public class HttpImpl {
         }
         return  message;
     }
+
+    public Boolean fetchPutRequest(String url, String requestBody) {
+
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        MediaType mediaType = MediaType.parse("application/json");
+        RequestBody body = RequestBody.create(mediaType, requestBody);
+        Request request = new Request.Builder()
+                .url(url)
+                .method("PUT", body)
+                .addHeader("Content-Type", "application/json")
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+
+            if (!response.isSuccessful()) {
+                return Boolean.FALSE;
+            } else {
+                return Boolean.TRUE;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  Boolean.FALSE;
+    }
+
 }

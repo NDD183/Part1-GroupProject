@@ -126,11 +126,13 @@ public class LoginController implements Initializable {
     // ALL SUPPORT FUNCTIONS
 
     public void insertComboBox(){
+
         cnameList = clinicImpl.getClinicNameID(clinicMap);
         if(!cnameList.isEmpty()) {
             hosBox.setItems(FXCollections.observableArrayList(cnameList));
             hosBox.setValue(cnameList.get(0));
-            hosNameLab.setText(cnameList.get(0));
+            String [] hosnameID = cnameList.get(0).split(" - ");
+            hosNameLab.setText(hosnameID[1] .toUpperCase()+ " HOSPITAL");
         } else {
             hosBox.setValue("No available hospital");
             hosNameLab.setText("INVALID HOSPITAL");
@@ -172,12 +174,12 @@ public class LoginController implements Initializable {
     public String addClinic(long id, String name, String city, String country){
 
         // Create new visit model
-        Clinic clinic = new Clinic();
+        Clinic clinic = new Clinic(id, city, country, name);
 
-        clinic.setId(id);
-        clinic.setCity(city);
-        clinic.setCountry(country);
-        clinic.setName(name);
+//        clinic.setId(id);
+//        clinic.setCity(city);
+//        clinic.setCountry(country);
+//        clinic.setName(name);
 
         if (clinicMap == null) {
             clinicMap = clinicImpl.addClinic(clinic, new HashMap<>());

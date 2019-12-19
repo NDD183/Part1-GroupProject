@@ -6,6 +6,10 @@ package Controller;
  *
  */
 
+import Implementation.HttpImpl;
+import Implementation.LesionImpl;
+import Model.*;
+import com.google.gson.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,7 +18,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class LesionSearchController implements Initializable {
 
@@ -36,6 +40,12 @@ public class LesionSearchController implements Initializable {
 
     // Initialize required variables
     private ScreenController screenController = new ScreenController();
+    private LesionResultController lesionResultController = new LesionResultController();
+    private HttpImpl httpImpl = new HttpImpl();
+    private LesionImpl lesionImpl = new LesionImpl();
+    static Map<Long, Lesion> lesionMap = new HashMap<>();
+
+
     /**Name: initialize
      **Event: When the lesionsSearch.fxml is loaded
      **Purpose: Setting UI component before showing to user
@@ -50,8 +60,8 @@ public class LesionSearchController implements Initializable {
         accLab.setCursor(Cursor.HAND);
         backLab.setCursor(Cursor.HAND);
         // Set value for comboBox
-        typeBox.getItems().addAll("Lesion ID","Diagnoses", "Lesion type", "Size", "Colour");
-        typeBox.setValue("Lesion Id");
+        typeBox.getItems().addAll("Lesion ID","Diagnoses", "Lesion Type", "Size", "Color");
+        typeBox.setValue("Lesion ID");
     }
 
     public void manualClicked(ActionEvent actionEvent) {
@@ -62,11 +72,14 @@ public class LesionSearchController implements Initializable {
 
 
     public void searchClicked(ActionEvent actionEvent) {
-        screenController.closeScreen((Stage) searchBtn.getScene().getWindow());
-        screenController.openScreen("lesionsResult");
+
+        if(! kwField.getText().equals("") && !typeBox.getSelectionModel().getSelectedItem().equals("")) {
+            lesionResultController.getSearchInfo(kwField.getText(), typeBox.getSelectionModel().getSelectedItem());
+            screenController.closeScreen((Stage) searchBtn.getScene().getWindow());
+            screenController.openScreen("lesionsResult");
+        }
         System.out.println("search clicked");
     }
-
 
 
     public void backClicked(MouseEvent mouseEvent) {
@@ -81,5 +94,13 @@ public class LesionSearchController implements Initializable {
         screenController.closeScreen((Stage) hosNameLab.getScene().getWindow());
         screenController.openScreen("login");
     }
+
+
+
+
+
+
+
+
 
 }

@@ -73,6 +73,20 @@
       </VBox>
       <SplitPane dividerPositions="0.5" layoutX="106.0" layoutY="135.0" orientation="VERTICAL">
         <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="67.0" prefWidth="626.0">
+               <children>
+                  <Label layoutX="24.0" layoutY="15.0" prefHeight="20.0" prefWidth="357.0" text="Click here to access External Central Lesion Database" wrapText="true" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="manualBtn" layoutX="485.0" layoutY="20.0" mnemonicParsing="false" onAction="#manualClicked" text="Manual Browsing" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="88.0" prefWidth="626.0">
                <children>
                   <Label layoutX="14.0" layoutY="29.0" prefHeight="25.0" prefWidth="73.0" text="Keyword" wrapText="true" AnchorPane.leftAnchor="15.0">
@@ -88,20 +102,6 @@
                   </Label>
                   <ComboBox fx:id="typeBox" layoutX="346.0" layoutY="27.0" prefHeight="27.0" prefWidth="150.0" />
                   <Button fx:id="searchBtn" layoutX="530.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchClicked" prefHeight="27.0" prefWidth="82.0" text="Search" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="67.0" prefWidth="626.0">
-               <children>
-                  <Label layoutX="24.0" layoutY="15.0" prefHeight="20.0" prefWidth="357.0" text="Click here to access External Central Lesion Database" wrapText="true" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="manualBtn" layoutX="485.0" layoutY="20.0" mnemonicParsing="false" onAction="#manualClicked" text="Manual Browsing" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
                </children>
             </AnchorPane>
         </items>

@@ -1,5 +1,6 @@
 package Controller;
 
+import Implementation.HttpImpl;
 import Model.Patient;
 import Model.Visit;
 import javafx.beans.property.SimpleStringProperty;
@@ -108,6 +109,7 @@ public class UpdateRecordController implements Initializable {
 
     private ScreenController screenController = new ScreenController();
     private RecordController recordController = new RecordController();
+    private HttpImpl httpImpl = new HttpImpl();
     static Patient selectedPatient;
     static Visit selectedVisit;
     static Map<Long, Visit> selectedVisitMap = new HashMap<>();
@@ -285,10 +287,13 @@ public class UpdateRecordController implements Initializable {
 
     public void updatePressed(ActionEvent actionEvent) {
         if(validation()) {
-            updatePatientInfo();
-            recordController.getLoadCode(101);
-            screenController.closeScreen((Stage) upBtn.getScene().getWindow());
-            screenController.openScreen("patientRecord");
+            if(updatePatientInfo()) {
+                recordController.getLoadCode(101);
+                screenController.closeScreen((Stage) upBtn.getScene().getWindow());
+                screenController.openScreen("patientRecord");
+            }
+            displayErrorAlert("Message from system", "Error Update", "There is an error in server" +
+                    ". Please kindly try again !!!");
         }
 
     }
@@ -347,8 +352,7 @@ public class UpdateRecordController implements Initializable {
         return Boolean.TRUE;
     }
 
-    public void updatePatientInfo() {
-        OkHttpClient client = new OkHttpClient();
+    public Boolean updatePatientInfo() {
         String sex = "";
         if(maleBtn.isSelected()) {
             sex = maleBtn.getText();
@@ -375,29 +379,8 @@ public class UpdateRecordController implements Initializable {
                 "\r\n  \"postcode\": \"" + codeField.getText() + "\"," +
                 "\r\n  \"sex\": \"" + sex + "\"," +
                 "\r\n  \"suburb\": \"" + subField.getText() + "\"\r\n}";
+        return httpImpl.fetchPutRequest("http://visiderm.herokuapp.com/api/v1/patients/"+pidField.getText(), requestBody);
 
-        MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, requestBody);
-        Request request = new Request.Builder()
-                .url("http://visiderm.herokuapp.com/api/v1/patients/" + pidField.getText())
-                .put(body)
-                .addHeader("Content-Type", "application/json")
-                .addHeader("User-Agent", "PostmanRuntime/7.20.1")
-                .addHeader("Accept", "*/*")
-                .addHeader("Cache-Control", "no-cache")
-                .addHeader("Postman-Token", "89ebcb02-1691-443d-b3fd-7cf4371ace94,3995d768-1588-4e90-933c-dfd4edead536")
-                .addHeader("Host", "visiderm.herokuapp.com")
-                .addHeader("Accept-Encoding", "gzip, deflate")
-                .addHeader("Content-Length", "455")
-                .addHeader("Connection", "keep-alive")
-                .addHeader("cache-control", "no-cache")
-                .build();
-
-        try {
-            Response response = client.newCall(request).execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     /**Name: displayAlert

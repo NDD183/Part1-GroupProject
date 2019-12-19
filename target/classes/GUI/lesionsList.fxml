@@ -81,14 +81,14 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TableView fx:id="lesionTable" layoutX="46.0" layoutY="14.0" prefHeight="503.0" prefWidth="710.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                  <TableView fx:id="lesionTable" layoutX="34.0" layoutY="14.0" prefHeight="591.0" prefWidth="734.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
                     <columns>
-                      <TableColumn fx:id="dateColumn" prefWidth="142.0" text="Date" />
-                      <TableColumn fx:id="sizeColumn" prefWidth="187.0" text="Size" />
-                        <TableColumn fx:id="imageColumn" minWidth="0.0" prefWidth="404.0" text="Image" />
+                      <TableColumn fx:id="dateColumn" prefWidth="202.0" text="Date" />
+                      <TableColumn fx:id="sizeColumn" prefWidth="126.0" text="Size" />
+                        <TableColumn fx:id="imageColumn" minWidth="0.0" prefWidth="405.0" text="Image" />
                     </columns>
                   </TableView>
-                  <Pagination fx:id="lesionPage" layoutX="276.0" layoutY="486.0" prefHeight="200.0" prefWidth="213.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <Pagination fx:id="lesionPage" layoutX="34.0" layoutY="535.0" prefHeight="651.0" prefWidth="711.0" AnchorPane.bottomAnchor="10.0" />
                </children>
             </AnchorPane>
         </content>
