@@ -91,8 +91,8 @@ public class LesionImpl {
                     LesionHistory lesionHistory = new LesionHistory(Long.parseLong(lesHisInfos[0]), dates[0],
                             lesHisInfos[2], lesHisInfos[3], lesHisInfos[4], lesHisInfos[5], lesHisInfos[6],
                             dates[1].substring(0, 5), lesionImage);
-                    lesionHistory.setDate(dates[0]);
-                    lesionHistory.setTime(dates[1].substring(0, 5));
+                   // lesionHistory.setDate(dates[0]);
+                    //lesionHistory.setTime(dates[1].substring(0, 5));
                     lesionHistories.add(lesionHistory);
                     index++;
                 }

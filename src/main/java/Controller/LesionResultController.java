@@ -32,6 +32,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class LesionResultController implements Initializable {
 
@@ -59,19 +60,17 @@ public class LesionResultController implements Initializable {
     @FXML
     ImageView lesView;
     @FXML
-     TableColumn<Lesion, String> lidColumn;
+    TableColumn<Lesion, String> lidColumn;
     @FXML
-     TableColumn<Lesion, String> docColumn;
+    TableColumn<Lesion, String> docColumn;
     @FXML
-     TableColumn<Lesion, String> dateColumn;
+    TableColumn<Lesion, String> dateColumn;
     @FXML
-     TableColumn<Lesion, String> timeColumn;
+    TableColumn<Lesion, String> timeColumn;
     @FXML
-     TableColumn<Lesion, String> hosColumn;
+    TableColumn<Lesion, String> hosColumn;
     @FXML
-     TableColumn<Lesion, String> diagColumn;
-    @FXML
-     TableColumn<Lesion, ImageView> imgColumn;
+    TableColumn<Lesion, String> diagColumn;
     @FXML
     Pagination lesionPage;
 
@@ -88,6 +87,7 @@ public class LesionResultController implements Initializable {
     private String[] infos;
     private ObservableList<Lesion> lesionData;
     ArrayList<Lesion> lesionsList = new ArrayList<>();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Set hover when moving mouse to specific label
@@ -113,25 +113,24 @@ public class LesionResultController implements Initializable {
     }
 
     public void loadData() {
-
-
+        String[] dates;
         switch (searchType) {
             case "Lesion ID":
                 response = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/lesions/" + keyword);
                 jsonObject = new JsonParser().parse(response).getAsJsonObject();
                 JsonArray lesionHistories = (JsonArray) jsonObject.get("lesionHistory");
 
-                infos = httpImpl.exactHttpResponse("lesionHistory",  lesionHistories.get(0).getAsJsonObject());
-                String[] dates = infos[1].split("T");
+                infos = httpImpl.exactHttpResponse("lesionHistory", lesionHistories.get(0).getAsJsonObject());
+                dates = infos[1].split("T");
 
                 dateLab.setText("Date: " + dates[0]);
-                timeLab.setText("Time: " + dates[1].substring(0,5));
-                sizeLab.setText("Size: " + infos[3] +" cm");
+                timeLab.setText("Time: " + dates[1].substring(0, 5));
+                sizeLab.setText("Size: " + infos[3] + " cm");
                 lidLab.setText("Lesion ID: " + jsonObject.get("id"));
                 diagArea.setText(infos[5]);
 
-                int imgID = 24306 + Integer.parseInt(infos[0]) -1;
-                String imageName = "/Lesions/ISIC_00"+  imgID   + ".jpg";
+                int imgID = 24306 + Integer.parseInt(infos[0]) - 1;
+                String imageName = "/Lesions/ISIC_00" + imgID + ".jpg";
 
                 try {
                     BufferedImage bufferedImage = ImageIO.read(getClass().getResourceAsStream(imageName));
@@ -143,107 +142,32 @@ public class LesionResultController implements Initializable {
 
                 break;
             case "Diagnoses":
-                 break;
-            case "Lesion Type":
-
-
-                 break;
-            case "Size":
-                response = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/lesions?size="+ keyword);
+                response = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/lesions?diagnose=" + keyword);
                 lesionsList = lesionImpl.loadLesionData(response);
-
-                // Configure table cell height
-                lesionTable.setFixedCellSize(60.0);
-
-                // Check if list is empty
-                if (lesionsList != null) {
-
-                    // Set text alignment for each column in record table
-                    lidColumn.setStyle("-fx-alignment: CENTER;");
-                    docColumn.setStyle("-fx-alignment: CENTER;");
-                    dateColumn.setStyle("-fx-alignment: CENTER;");
-                    timeColumn.setStyle("-fx-alignment: CENTER;");
-                    hosColumn.setStyle("-fx-alignment: CENTER;");
-                    diagColumn.setStyle("-fx-alignment: CENTER;");
-                    imgColumn.setStyle("-fx-alignment: CENTER;");
-
-                    // Set column in array to present as different attributes of staff
-                    lidColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-
-                    // Insert doctor name and clinic name to the table column
-                    docColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
-                        @Override
-                        public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
-                            return new SimpleStringProperty(param.getValue().getVisit().getStaff().getName());
-                        }
-                    });
-                    hosColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
-                        @Override
-                        public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
-                            return new SimpleStringProperty(param.getValue().getVisit().getClinic().getName());
-                        }
-                    });
-                    dateColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
-                        @Override
-                        public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
-                            ArrayList<LesionHistory> lesHisList  = new ArrayList<>();
-                            lesHisList.addAll(param.getValue().getLesionHistory());
-
-                            for(int i = 0; i< lesHisList.size(); i++) {
-                                if(lesHisList.get(i).getSize().contains(keyword)) {
-                                    return new SimpleStringProperty(lesHisList.get(i).getDate());
-                                }
-                            }
-                            return new SimpleStringProperty("");
-                        }
-                    });
-
-                    timeColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
-                        @Override
-                        public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
-                            ArrayList<LesionHistory> lesHisList  = new ArrayList<>();
-                            lesHisList.addAll(param.getValue().getLesionHistory());
-
-                            for(int i = 0; i< lesHisList.size(); i++) {
-                                if(lesHisList.get(i).getSize().contains(keyword)) {
-                                    return new SimpleStringProperty(lesHisList.get(i).getTime());
-                                }
-                            }
-                            return new SimpleStringProperty("");
-                        }
-                    });
-
-                    diagColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
-                        @Override
-                        public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
-                            ArrayList<LesionHistory> lesHisList  = new ArrayList<>();
-                            lesHisList.addAll(param.getValue().getLesionHistory());
-
-                            for(int i = 0; i< lesHisList.size(); i++) {
-                                if(lesHisList.get(i).getSize().equals(keyword)) {
-                                    return new SimpleStringProperty(lesHisList.get(i).getDiagnoses());
-                                }
-                            }
-                            return new SimpleStringProperty("");
-                        }
-                    });
-
-                    lesionData = FXCollections.observableArrayList(lesionsList);
-                    // Set the created list to the staff table
-                    lesionTable.setItems(null);
-                    lesionTable.setItems(lesionData);
-
-                   //  Applying pagination to record table
-                    lesionPage.setCurrentPageIndex(0);
-                    lesionPage.setPageCount(lesionData.size() / lrowsPerPage + 1);
-                    lesionPage.setPageFactory(this::createLesionPage);
-                }
-                    break;
+                insertData();
+                loadTable();
+                break;
+            case "Lesion Type":
+                response = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/lesions?type=" + keyword);
+                lesionsList = lesionImpl.loadLesionData(response);
+                insertData();
+                loadTable();
+                break;
+            case "Size":
+                response = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/lesions?size=" + keyword);
+                lesionsList = lesionImpl.loadLesionData(response);
+                insertData();
+                loadTable();
+                break;
             case "Colour":
-                    break;
+                response = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/lesions?color=" + keyword);
+                lesionsList = lesionImpl.loadLesionData(response);
+                insertData();
+                loadTable();
+                break;
             default:
-                    response = "Invalid search type";
-        break;
+                response = "Invalid search type";
+                break;
         }
     }
 
@@ -253,15 +177,104 @@ public class LesionResultController implements Initializable {
         searchType = type;
     }
 
-    /**Name: displayAlert
-     ** Purpose: This method helps to display alert in this screen
+    /**
+     * Name: displayAlert
+     * * Purpose: This method helps to display alert in this screen
+     *
      * @param pageIndex: contains the information of the context section in alert dialog
-     ** @return void
+     *                   * @return void
      */
     private Node createLesionPage(int pageIndex) {
         int fromIndex = pageIndex * lrowsPerPage;
         int toIndex = Math.min(fromIndex + lrowsPerPage, lesionsList.size());
         lesionTable.setItems(FXCollections.observableArrayList(lesionsList.subList(fromIndex, toIndex)));
         return lesionTable;
+    }
+
+    public void loadTable() {
+        // Check if list is empty
+        if (lesionsList != null) {
+
+            // Set text alignment for each column in record table
+            lidColumn.setStyle("-fx-alignment: CENTER;");
+            docColumn.setStyle("-fx-alignment: CENTER;");
+            dateColumn.setStyle("-fx-alignment: CENTER;");
+            timeColumn.setStyle("-fx-alignment: CENTER;");
+            hosColumn.setStyle("-fx-alignment: CENTER;");
+            diagColumn.setStyle("-fx-alignment: CENTER;");
+
+            // Set column in array to present as different attributes of staff
+            lidColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+            diagColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+            // Insert doctor name and clinic name to the table column
+            docColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
+                @Override
+                public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
+                    return new SimpleStringProperty(param.getValue().getVisit().getStaff().getName());
+                }
+            });
+            hosColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
+                @Override
+                public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
+                    return new SimpleStringProperty(param.getValue().getVisit().getClinic().getName());
+                }
+            });
+
+            dateColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
+                @Override
+                public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
+                    String[] dates = param.getValue().getVisit().getStartDate().split("T");
+                    return new SimpleStringProperty(dates[0]);
+                }
+            });
+
+            timeColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Lesion, String>, ObservableValue<String>>() {
+                @Override
+                public ObservableValue<String> call(TableColumn.CellDataFeatures<Lesion, String> param) {
+                    String[] dates = param.getValue().getVisit().getStartDate().split("T");
+                    return new SimpleStringProperty(dates[1].substring(0, 5));
+                }
+            });
+
+            // Set data to table
+            lesionData = FXCollections.observableArrayList(lesionsList);
+            // Set the created list to the staff table
+            lesionTable.setItems(null);
+            lesionTable.setItems(lesionData);
+
+            //  Applying pagination to record table
+            lesionPage.setCurrentPageIndex(0);
+            lesionPage.setPageCount(lesionData.size() / lrowsPerPage + 1);
+            lesionPage.setPageFactory(this::createLesionPage);
+        }
+    }
+
+    public void insertData() {
+        String [] dates = lesionsList.get(0).getVisit().getStartDate().split("T");
+        dateLab.setText("Date: " + dates[0]);
+        timeLab.setText("Time: " + dates[1].substring(0, 5));
+        lidLab.setText("Lesion ID: " + lesionsList.get(0).getId());
+        diagArea.setText(lesionsList.get(0).getVisit().getNote());
+
+        if(searchType.equals("Size")) {
+            sizeLab.setText("Size: " + keyword +" cm");
+        }
+
+        foundLab.setText("Your Search Found: " + lesionsList.size() + "similar record");
+
+        // Configure table cell height
+        lesionTable.setFixedCellSize(60.0);
+
+        int imgID = 24306 + Integer.parseInt(String.valueOf(lesionsList.get(0).getId())) - 1;
+        String imageName = "/Lesions/ISIC_00" + imgID + ".jpg";
+
+        try {
+            BufferedImage bufferedImage = ImageIO.read(getClass().getResourceAsStream(imageName));
+            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+            lesView.setImage(image);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

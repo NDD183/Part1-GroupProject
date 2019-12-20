@@ -83,7 +83,6 @@ public class LesionListController implements Initializable {
         // Load table base on gained data
         reloadTable();
 
-
     }
 
     public void backClicked(MouseEvent mouseEvent) {
