@@ -15,10 +15,10 @@ public class LesionHistoryImpl {
      */
     public Map<Long, LesionHistory> addLesionHistory(LesionHistory lesionHistory, Map<Long, LesionHistory> lesionHistoryMap) {
         if(lesionHistoryMap != null) {
-            if(lesionHistoryMap.containsKey(lesionHistory.getId())) {
-                System.out.println("This patient already being stored");
+            if(!lesionHistoryMap.containsKey(lesionHistory.getId())) {
+                System.out.println("Updating Lesion History Info");
             }
-            //Add course to map
+            //Add lesion history to map
             lesionHistoryMap.put(lesionHistory.getId(), lesionHistory);
         }
         return lesionHistoryMap;

@@ -13,6 +13,15 @@ public class Lesion {
     private String status;
     private Set<LesionHistory> lesionHistory;
 
+    public Lesion(Long id, Visit visit, String location, String status, Set<LesionHistory> lesionHistory) {
+        this.id = id;
+        this.visit = visit;
+        this.location = location;
+        this.status = status;
+        this.lesionHistory = lesionHistory;
+    }
+
+
     public Long getId() {
         return id;
     }

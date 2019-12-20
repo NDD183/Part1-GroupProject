@@ -291,9 +291,11 @@ public class UpdateRecordController implements Initializable {
                 recordController.getLoadCode(101);
                 screenController.closeScreen((Stage) upBtn.getScene().getWindow());
                 screenController.openScreen("patientRecord");
+            } else {
+                displayErrorAlert("Message from system", "Error Update", "There is an error in server" +
+                        ". Please kindly try again !!!");
             }
-            displayErrorAlert("Message from system", "Error Update", "There is an error in server" +
-                    ". Please kindly try again !!!");
+
         }
 
     }
@@ -408,11 +410,17 @@ public class UpdateRecordController implements Initializable {
             return Boolean.FALSE;
         }
         int i = 0;
-        if (string.charAt(0) == '-') {
-            if (string.length() == 1) {
-                return Boolean.FALSE;
-            }
-            i = 1;
+//        if (string.charAt(0) == '-') {
+//            if (string.length() == 1) {
+//                return Boolean.FALSE;
+//            }
+//            i = 1;
+//        }
+        if(string.contains("-")) {
+            string = string.replaceAll("-","");
+        }
+        if(string.contains(".")) {
+            string = string.replaceAll(".","");
         }
         for (; i < string.length(); i++) {
             char c = string.charAt(i);

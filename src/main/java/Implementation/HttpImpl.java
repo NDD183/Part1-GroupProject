@@ -1,10 +1,24 @@
 package Implementation;
 
+import Model.Lesion;
+import Model.LesionHistory;
+import Model.Visit;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.ImageView;
 import okhttp3.*;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class HttpImpl {
 
@@ -96,5 +110,8 @@ public class HttpImpl {
         }
         return  Boolean.FALSE;
     }
+
+
+
 
 }

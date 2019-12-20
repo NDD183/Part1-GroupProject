@@ -147,61 +147,66 @@ public class LesionListController implements Initializable {
      */
 
     public void loadData(String response) {
-        Set<LesionHistory> lesionHistories = new HashSet<>();
-        JsonObject jsonObject = new JsonParser().parse(response).getAsJsonObject();
-        JsonArray contentResponse = (JsonArray) jsonObject.get("content");
-
-        for (int i = 0; i < contentResponse.size(); i++) {
-            String[] infos = httpImpl.exactHttpResponse("lesion", contentResponse.get(i).getAsJsonObject());
-            Gson gson = new Gson();
-            Visit visit = gson.fromJson(contentResponse.get(i).getAsJsonObject().get("visit"), Visit.class);
-            JsonArray lesionHisArray = contentResponse.get(i).getAsJsonObject().get("lesionHistory").getAsJsonArray();
-
-            long lid;
-            try {
-                lid = Long.parseLong(infos[0]);
-            } catch (NumberFormatException nfe) {
-                System.out.println(nfe.toString());
-                break;
-            }
-
-            if (lesionHisArray.size() > 0) {
-                int index = 0;
-
-                while(index < lesionHisArray.size()) {
-                   // LesionHistory lesionHistory = gson.fromJson(lesionHisArray.get(index), LesionHistory.class);
-                    String[]lesHisInfos = httpImpl.exactHttpResponse("lesionHistory",lesionHisArray.get(index).getAsJsonObject() );
-                    String[] dates = lesHisInfos[1].split("T");
-
-                    int hid = Integer.parseInt(String.valueOf(lesionHisArray.get(index).getAsJsonObject().get("id")));
-                    int imageName =  24306 + hid - 1;
-                    String pathImage = "";
-                    if(imageName > 24594) {
-                        imageName =  ThreadLocalRandom.current().nextInt(24306, 24594 + 1);
-                    }
-                    pathImage = "/Lesions/ISIC_00" + imageName + ".jpg";
-                    System.out.println(pathImage);
-
-                    BufferedImage buffImage = null;
-                    ImageView lesionImage = null;
-
-                    try {
-                        buffImage = ImageIO.read(getClass().getResourceAsStream(pathImage));
-                        lesionImage = new ImageView((SwingFXUtils.toFXImage(buffImage, null)));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    LesionHistory lesionHistory = new LesionHistory(Long.parseLong(lesHisInfos[0]), dates[0],
-                            lesHisInfos[2], lesHisInfos[3], lesHisInfos[4], lesHisInfos[5], lesHisInfos[6],
-                            dates[1].substring(0, 5), lesionImage);
-                    lesionHistory.setDate(dates[0]);
-                    lesionHistory.setTime(dates[1].substring(0, 5));
-                  lesionHistories.add(lesionHistory);
-                  index++;
-                }
-            }
-            addLesion(lid, visit, infos[1], infos[2], lesionHistories);
+//        Set<LesionHistory> lesionHistories = new HashSet<>();
+//        JsonObject jsonObject = new JsonParser().parse(response).getAsJsonObject();
+//        JsonArray contentResponse = (JsonArray) jsonObject.get("content");
+//
+//        for (int i = 0; i < contentResponse.size(); i++) {
+//            String[] infos = httpImpl.exactHttpResponse("lesion", contentResponse.get(i).getAsJsonObject());
+//            Gson gson = new Gson();
+//            Visit visit = gson.fromJson(contentResponse.get(i).getAsJsonObject().get("visit"), Visit.class);
+//            JsonArray lesionHisArray = contentResponse.get(i).getAsJsonObject().get("lesionHistory").getAsJsonArray();
+//
+//            long lid;
+//            try {
+//                lid = Long.parseLong(infos[0]);
+//            } catch (NumberFormatException nfe) {
+//                System.out.println(nfe.toString());
+//                break;
+//            }
+//
+//            if (lesionHisArray.size() > 0) {
+//                int index = 0;
+//
+//                while(index < lesionHisArray.size()) {
+//                   // LesionHistory lesionHistory = gson.fromJson(lesionHisArray.get(index), LesionHistory.class);
+//                    String[]lesHisInfos = httpImpl.exactHttpResponse("lesionHistory",lesionHisArray.get(index).getAsJsonObject() );
+//                    String[] dates = lesHisInfos[1].split("T");
+//
+//                    int hid = Integer.parseInt(String.valueOf(lesionHisArray.get(index).getAsJsonObject().get("id")));
+//                    int imageName =  24306 + hid - 1;
+//                    String pathImage = "";
+//                    if(imageName > 24594) {
+//                        imageName =  ThreadLocalRandom.current().nextInt(24306, 24594 + 1);
+//                    }
+//                    pathImage = "/Lesions/ISIC_00" + imageName + ".jpg";
+//                    System.out.println(pathImage);
+//
+//                    BufferedImage buffImage = null;
+//                    ImageView lesionImage = null;
+//
+//                    try {
+//                        buffImage = ImageIO.read(getClass().getResourceAsStream(pathImage));
+//                        lesionImage = new ImageView((SwingFXUtils.toFXImage(buffImage, null)));
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    LesionHistory lesionHistory = new LesionHistory(Long.parseLong(lesHisInfos[0]), dates[0],
+//                            lesHisInfos[2], lesHisInfos[3], lesHisInfos[4], lesHisInfos[5], lesHisInfos[6],
+//                            dates[1].substring(0, 5), lesionImage);
+//                    lesionHistory.setDate(dates[0]);
+//                    lesionHistory.setTime(dates[1].substring(0, 5));
+//                  lesionHistories.add(lesionHistory);
+//                  index++;
+//                }
+//            }
+        //    addLesion(lid, visit, infos[1], infos[2], lesionHistories);
+     //   }
+        ArrayList<Lesion> lesionsList = lesionImpl.loadLesionData(response);
+        for(int i = 0; i<lesionsList.size();i++) {
+            addLesion(lesionsList.get(i).getId(),lesionsList.get(i).getVisit(),lesionsList.get(i).getLocation(),
+                    lesionsList.get(i).getStatus(), lesionsList.get(i).getLesionHistory());
         }
     }
 
@@ -213,13 +218,8 @@ public class LesionListController implements Initializable {
     public String addLesion(long id, Visit visit, String location, String status, Set<LesionHistory> lesionHistories){
 
         // Create new visit model
-        Lesion lesion = new Lesion();
+        Lesion lesion = new Lesion(id, visit, location, status, lesionHistories);
 
-        lesion.setId(id);
-        lesion.setVisit(visit);
-        lesion.setLocation(location);
-        lesion.setStatus(status);
-        lesion.setLesionHistory(lesionHistories);
 
         if (lesionMap == null) {
             lesionMap = lesionImpl.addLesion(lesion, new HashMap<>());

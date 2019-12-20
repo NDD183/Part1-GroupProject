@@ -16,10 +16,10 @@ public class ClinicImpl {
      */
     public Map<Long, Clinic> addClinic(Clinic clinic, Map<Long, Clinic> clinicMap) {
         if(clinicMap != null) {
-            if(clinicMap.containsKey(clinic.getId())) {
-                System.out.println("This patient already being stored");
+            if(!clinicMap.containsKey(clinic.getId())) {
+                System.out.println("Updating Clinic Info");
             }
-            //Add course to map
+            //Add clinic to map
             clinicMap.put(clinic.getId(), clinic);
         }
         return clinicMap;

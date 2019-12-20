@@ -1,55 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aba05673-3a83-458c-8953-c778597137e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Implementation/LesionHistoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Implementation/LesionImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/LesionImage.java" afterDir="false" />
+    <list default="true" id="2956bf6f-ff5d-44ba-88d5-15ed526d68f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LesionListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LesionListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LesionResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LesionResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LesionSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LesionSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/RecordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UpdateRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UpdateRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementation/ClinicImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementation/ClinicImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Implementation/HttpImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementation/HttpImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Clinic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Clinic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementation/LesionHistoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementation/LesionHistoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementation/LesionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementation/LesionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementation/PatientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementation/PatientImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementation/VisitImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementation/VisitImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Lesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Lesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/LesionHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/LesionHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/lesionsList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/lesionsList.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/lesionsResult.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/lesionsResult.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/LesionListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LesionListController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/LesionResultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LesionResultController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/LesionSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LesionSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/RecordController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/RecordController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/RecordController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/RecordController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/RecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/RecordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/UpdateRecordController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/UpdateRecordController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controller/UpdateRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/UpdateRecordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/lesionsList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/lesionsList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/lesionsSearch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/lesionsSearch.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/lesionsResult.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/lesionsResult.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Implementation/ClinicImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Implementation/ClinicImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Implementation/HttpImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Implementation/HttpImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/Clinic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Clinic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Implementation/LesionHistoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Implementation/LesionHistoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Implementation/LesionImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Implementation/LesionImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Implementation/PatientImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Implementation/PatientImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Implementation/VisitImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Implementation/VisitImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Model/Lesion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Lesion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/LesionHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/LesionHistory.class" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/RecordController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="125" column="21" lean-forward="true" selection-start-line="125" selection-end-line="126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LesionResultController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="210" column="29" lean-forward="true" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/LesionHistory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Lesion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="15" column="107" selection-start-line="15" selection-start-column="107" selection-end-line="15" selection-end-column="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LesionListController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-305">
+              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Implementation/LesionImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="42" column="63" lean-forward="true" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Implementation/HttpImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1632">
+              <caret line="114" selection-start-line="114" selection-end-line="114" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/Controller/UpdateRecordController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Implementation/ClinicImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Implementation/LesionHistoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Implementation/VisitImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Implementation/PatientImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/RecordController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Implementation/HttpImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Lesion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Implementation/LesionImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/LesionListController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/LesionResultController.java" />
+      </list>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -58,15 +136,101 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1VA0AGzzPj1Ui3fxtiW1ssBcayP" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="480" />
+    <option name="height" value="515" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Driven" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Implementation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Architecture-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Part1-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
@@ -106,34 +270,178 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aba05673-3a83-458c-8953-c778597137e7" name="Default Changelist" comment="" />
-      <created>1576680446127</created>
+      <changelist id="2956bf6f-ff5d-44ba-88d5-15ed526d68f4" name="Default Changelist" comment="" />
+      <created>1576812338442</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1576680446127</updated>
-      <workItem from="1576680450997" duration="13628000" />
-      <workItem from="1576729351373" duration="13612000" />
-      <workItem from="1576750113291" duration="21899000" />
+      <updated>1576812338442</updated>
+      <workItem from="1576812342849" duration="8809000" />
+      <workItem from="1576825973186" duration="4919000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13728000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18120806" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Implementation/VisitImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Implementation/ClinicImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="27" selection-start-line="27" selection-end-line="39" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Implementation/PatientImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="54" column="56" lean-forward="true" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UpdateRecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="401" column="37" lean-forward="true" selection-start-line="401" selection-start-column="37" selection-end-line="401" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Implementation/LesionHistoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LesionSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-310">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Implementation/HttpImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1480">
+          <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LesionListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-305">
+          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Lesion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="15" column="107" selection-start-line="15" selection-start-column="107" selection-end-line="15" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/LesionHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/RecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="125" column="21" lean-forward="true" selection-start-line="125" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Implementation/LesionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="42" column="63" lean-forward="true" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LesionResultController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="210" column="29" lean-forward="true" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

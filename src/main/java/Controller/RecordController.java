@@ -95,6 +95,8 @@ public class RecordController implements Initializable {
     @FXML
     Label nameLab;
     @FXML
+    Label logoutLab;
+    @FXML
     Label startDateLab;
     @FXML
     Label endDateLab;
@@ -109,8 +111,8 @@ public class RecordController implements Initializable {
     static PatientImpl patientImpl = new PatientImpl();
     static VisitImpl visitImpl = new VisitImpl();
     private HttpImpl httpImpl = new HttpImpl();
-    static Map<Integer, Patient> patientMap =  new HashMap<>();
-    static Map<Long, Visit> visitMap =  new HashMap<>();
+    private Map<Integer, Patient> patientMap =  new HashMap<>();
+    private Map<Long, Visit> visitMap =  new HashMap<>();
     private Map<Integer, Patient> searchMap =  new HashMap<>();
     static int responseCode;
     private ObservableList<Patient> patientData;
@@ -141,11 +143,12 @@ public class RecordController implements Initializable {
         searchLab.setCursor(Cursor.HAND);
         editPatientLab.setCursor(Cursor.HAND);
         editVisitLab.setCursor(Cursor.HAND);
+        logoutLab.setCursor(Cursor.HAND);
         // Additional configure label
         editPatientLab.setDisable(true);
         // Set value for comboBox
-        typeBox.getItems().addAll("Name","ID");
-        typeBox.setValue("Name");
+        typeBox.getItems().addAll("ID","Name");
+        typeBox.setValue("ID");
         // Set value for current date label
         int year = Calendar.getInstance().get(Calendar.YEAR);
         int date =  Calendar.getInstance().get(Calendar.DATE);
@@ -197,12 +200,12 @@ public class RecordController implements Initializable {
 
         // Perform different function based on response code
         // 101: fetch again all patient data  - 202: use again the last fetch data
-        if(responseCode == 101){
+        //if(responseCode == 101){
             // Add data to map
             // Get all patient: http://visiderm.herokuapp.com/api/v1/patients
             // Get patient by clinic: http://visiderm.herokuapp.com/api/v1/clinic/1/patient
            loadData("patient", httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/clinic/"+loginClinicID+"/patients"));
-        }
+      //  }
         // Load Record to UI
             reloadTable("patient", patientMap);
     }
@@ -243,20 +246,28 @@ public class RecordController implements Initializable {
      **Effect: The method help user to additionally config UI
      */
     public void searchPressed(ActionEvent actionEvent)  {
+        ArrayList<Patient> searchedPatients = new ArrayList<>();
         if(!searchField.getText().equals("")) {
             if(typeBox.getSelectionModel().getSelectedItem().equals("ID")) {
-               String patientInfo = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients/"+searchField.getText());
-                if(!patientInfo.equals("Error")) {
-                    JsonObject patient = new JsonParser().parse(patientInfo).getAsJsonObject();
+//               String patientInfo = httpImpl.fetchGetRequest("http://visiderm.herokuapp.com/api/v1/patients/"+searchField.getText());
+//                if(!patientInfo.equals("Error")) {
+//                    JsonObject patient = new JsonParser().parse(patientInfo).getAsJsonObject();
+//
+//                    String[] patientInfos = httpImpl.exactHttpResponse("patient", patient);
+//                    addPatient("search", Integer.parseInt(patientInfos[0]), patientInfos[1]+" "+patientInfos[2],patientInfos[3],
+//                            patientInfos[4],patientInfos[5], patientInfos[6],patientInfos[7],patientInfos[8], patientInfos[9],
+//                            patientInfos[10], patientInfos[11] ,patientInfos[12], patientInfos[13],patientInfos[14],
+//                            patientInfos[15],patientInfos[16], patientInfos[17], patientInfos[18]);
+//                    reloadTable("patient",searchMap);
+//                }
 
-                    String[] patientInfos = httpImpl.exactHttpResponse("patient", patient);
-                    addPatient("search", Integer.parseInt(patientInfos[0]), patientInfos[1]+" "+patientInfos[2],patientInfos[3],
-                            patientInfos[4],patientInfos[5], patientInfos[6],patientInfos[7],patientInfos[8], patientInfos[9],
-                            patientInfos[10], patientInfos[11] ,patientInfos[12], patientInfos[13],patientInfos[14],
-                            patientInfos[15],patientInfos[16], patientInfos[17], patientInfos[18]);
-                    reloadTable("patient",searchMap);
-                }
+            searchedPatients.add(patientImpl.getPatientByID(Integer.parseInt(searchField.getText()), patientMap));
             }
+            if(typeBox.getSelectionModel().getSelectedItem().equals("Name")){
+                searchedPatients = patientImpl.getPatientByName(searchField.getText(), patientMap);
+            }
+            recordTable.setItems(null);
+            recordTable.setItems(FXCollections.observableArrayList(searchedPatients));
         } else {
             reloadTable("patient",patientMap);
 //            displayErrorAlert("Message from system", "Invalid ID/Name", "Please enter a valid patient ID " +
@@ -546,6 +557,7 @@ public class RecordController implements Initializable {
                 visitPage.setPageCount(visitList.size() / vrowsPerPage + 1);
                 visitPage.setPageFactory(this::createVisitPage);
             }
+
             editPatientLab.setDisable(false);
         }
     }
@@ -594,5 +606,6 @@ public class RecordController implements Initializable {
     public void getClinicID(String cid) {
         loginClinicID = Long.parseLong(cid);
     }
+
 
 }

@@ -16,8 +16,8 @@ public class VisitImpl {
      */
     public Map<Long, Visit> addVisit(Visit visit, Map<Long, Visit> visitMap) {
         if(visitMap != null) {
-            if(visitMap.containsKey(visit.getId())) {
-                System.out.println("This patient already being stored");
+            if(!visitMap.containsKey(visit.getId())) {
+                System.out.println("Updating Visit Info");
             }
             //Add visit to map
             visitMap.put(visit.getId(), visit);
