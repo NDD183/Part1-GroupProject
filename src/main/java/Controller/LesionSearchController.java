@@ -11,6 +11,7 @@ import Implementation.LesionImpl;
 import Model.*;
 import com.google.gson.*;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -62,6 +63,26 @@ public class LesionSearchController implements Initializable {
         // Set value for comboBox
         typeBox.getItems().addAll("Lesion ID","Diagnoses", "Lesion Type", "Size", "Color");
         typeBox.setValue("Lesion ID");
+
+        // access other
+        accLab.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                screenController.closeScreen((Stage) accLab.getScene().getWindow());
+                screenController.openScreen("map");
+            }
+        });
+
+        // back to internal
+        backLab.setCursor(Cursor.HAND);
+        backLab.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                screenController.closeScreen((Stage) backLab.getScene().getWindow());
+                screenController.openScreen("patientRecord");
+
+            }
+        });
     }
 
     public void manualClicked(ActionEvent actionEvent) {

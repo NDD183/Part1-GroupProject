@@ -94,12 +94,20 @@ public class LoginController implements Initializable {
      **Effect: The method help user to additionally config UI
      */
     public void loginPressed(ActionEvent actionEvent) {
-        unameField.setText("admin");
-        pwdField.setText("admin");
-        if(unameField.getText().equals("admin") && (pwdField.getText().equals("admin"))) {
+//        unameField.setText("admin");
+//        pwdField.setText("admin");
+        if(unameField.getText().equals("admin") && (pwdField.getText().equals("admin")) && serverBox.getSelectionModel().getSelectedItem().equals("Head Doctor")) {
             String[] clinicInfo = hosBox.getSelectionModel().getSelectedItem().split(" - ");
             System.out.println(clinicInfo[0]);
             recordController.getClinicID(clinicInfo[0]);
+            recordController.getServer("Head Doctor");
+            screenController.closeScreen((Stage) logBtn.getScene().getWindow());
+            screenController.openScreen("patientRecord");
+        } else if(unameField.getText().equals("user") && (pwdField.getText().equals("user")) && serverBox.getSelectionModel().getSelectedItem().equals("Dermatologist")) {
+            String[] clinicInfo = hosBox.getSelectionModel().getSelectedItem().split(" - ");
+            System.out.println(clinicInfo[0]);
+            recordController.getClinicID(clinicInfo[0]);
+            recordController.getServer("Dermatologist");
             screenController.closeScreen((Stage) logBtn.getScene().getWindow());
             screenController.openScreen("patientRecord");
         } else {

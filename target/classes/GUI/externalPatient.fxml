@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="556.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ExternalPatientController">
+   <children>
+      <Label layoutX="166.0" layoutY="14.0" text="External Central Patient" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="internal" layoutX="22.0" layoutY="72.0" text="Back to internal system" underline="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="other" layoutX="323.0" layoutY="72.0" text="Access other hospitals in system" underline="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TitledPane collapsible="false" layoutX="22.0" layoutY="112.0" prefHeight="77.0" prefWidth="528.0" text="Patient List">
+         <content>
+            <Pane prefHeight="162.0" prefWidth="496.0">
+               <children>
+                  <Button fx:id="searchBtn" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" text="Search" />
+                  <TextField fx:id="searchField" layoutX="82.0" layoutY="7.0" prefHeight="31.0" prefWidth="127.0" />
+                  <Label layoutX="236.0" layoutY="12.0" text="By" />
+                  <ComboBox fx:id="byCB" layoutX="266.0" layoutY="7.0" prefHeight="31.0" prefWidth="112.0" />
+                  <Label layoutX="403.0" layoutY="12.0" text="Page" />
+                  <ComboBox fx:id="pageCB" layoutX="448.0" layoutY="7.0" prefHeight="31.0" prefWidth="64.0" />
+               </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      <TableView fx:id="table" layoutX="24.0" layoutY="205.0" prefHeight="329.0" prefWidth="525.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="97.0" text="Patient ID" />
+          <TableColumn fx:id="nameCol" prefWidth="202.0" text="Name" />
+            <TableColumn fx:id="sexCol" prefWidth="70.0" text="Sex" />
+            <TableColumn fx:id="dobCol" prefWidth="137.0" text="Date of Birth" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

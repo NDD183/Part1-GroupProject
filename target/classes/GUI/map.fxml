@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="1053.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MapController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="668.0" minWidth="10.0" prefWidth="668.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="338.0" minWidth="10.0" prefWidth="331.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="126.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="360.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="308.0" minHeight="10.0" prefHeight="307.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="192.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <BorderPane prefHeight="145.0" prefWidth="965.0" GridPane.columnSpan="2">
+         <center>
+            <Label fx:id="currentHospital" text="SOME HOSPITAL" textFill="RED" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </center>
+         <left>
+            <Label fx:id="internal" text="Back to internal system" underline="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+         </left>
+         <right>
+            <Label fx:id="lesion" text="Search for lesions" underline="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+         </right>
+         <top>
+            <Label text="CONNECT TO EXTERNAL HOSPITAL" textFill="RED" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </top>
+      </BorderPane>
+      <TitledPane animated="false" collapsible="false" prefHeight="589.0" prefWidth="661.0" text="WORLD SYSTEM MAP" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="3" GridPane.valignment="TOP">
+         <content>
+            <Canvas fx:id="worldMap" height="520.0" width="660.0" />
+         </content>
+      </TitledPane>
+      <TitledPane collapsible="false" prefHeight="94.0" prefWidth="311.0" text="Manual Search" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <content>
+            <HBox alignment="CENTER" prefHeight="94.0" prefWidth="338.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Region" />
+                  <ComboBox fx:id="regionCB" prefWidth="150.0" />
+                  <Button fx:id="regionSearch" mnemonicParsing="false" text="Search" />
+               </children>
+            </HBox>
+         </content>
+      </TitledPane>
+      <GridPane hgap="15.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="93.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="230.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="City" GridPane.halignment="RIGHT" />
+            <Label text="Hospital" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Button fx:id="hospitalSearch" mnemonicParsing="false" text="Search" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cityCB" prefWidth="150.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="hospitalCB" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </GridPane>
+      <Canvas fx:id="regionMap" height="263.0" width="279.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>

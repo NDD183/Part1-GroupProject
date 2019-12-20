@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="828.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VisitController">
+    <children>
+        <VBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="800.0">
+            <children>
+                <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="800.0" text="INTERNAL PATIENT VISIT RECORD " textFill="#d30c0c" wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </Label>
+                <HBox prefHeight="92.0" prefWidth="200.0">
+                    <padding>
+                        <Insets top="15.0" />
+                    </padding>
+                    <children>
+                        <Label fx:id="accLab" text="Access other hospitals in system" underline="true" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <padding>
+                                <Insets left="5.0" top="10.0" />
+                            </padding>
+                        </Label>
+                        <Label fx:id="hosNameLab" alignment="CENTER" contentDisplay="CENTER" text="SIR JONH MONASH HOSPITAL" textAlignment="CENTER" textFill="#da0707" wrapText="true">
+                            <padding>
+                                <Insets left="60.0" right="15.0" top="5.0" />
+                            </padding>
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="searchLab" layoutX="10.0" layoutY="25.0" text="Search for lessions" underline="true" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <padding>
+                                <Insets left="100.0" top="10.0" />
+                            </padding>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="15.0" right="5.0" />
+            </padding>
+        </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="232.0" layoutX="31.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" width="749.0" />
+      <Label layoutX="120.0" layoutY="139.0" text="Data:" />
+      <Label layoutX="119.0" layoutY="171.0" text="Time:" />
+      <Label layoutX="109.0" layoutY="202.0" text="Doctor:" />
+      <Label layoutX="117.0" layoutY="237.0" text="Clinic:" />
+      <Label layoutX="69.0" layoutY="273.0" text="Patient Name:" />
+      <Label layoutX="92.0" layoutY="306.0" text="Patient ID:" />
+      <Label layoutX="187.0" layoutY="139.0" />
+      <Button fx:id="asd" layoutX="615.0" layoutY="166.0" mnemonicParsing="false" onAction="#updateRecord" prefHeight="27.0" prefWidth="135.0" text="Update Record" />
+      <Button layoutX="615.0" layoutY="222.0" mnemonicParsing="false" onAction="#makeNewRecord" prefHeight="27.0" prefWidth="135.0" text="Make New Record" />
+      <Button layoutX="616.0" layoutY="277.0" mnemonicParsing="false" onAction="#nextRecord" prefHeight="27.0" prefWidth="135.0" text="Go to Next Record" />
+      <Label fx:id="accLab1" alignment="TOP_LEFT" layoutX="88.0" layoutY="369.0" text="Access other hospitals in system" wrapText="true">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" top="10.0" />
+         </padding>
+         <cursor>
+            <!--<Cursor fx:constant="NONE" />-->
+         </cursor>
+      </Label>
+      <Line endX="91.0" layoutX="443.0" layoutY="392.0" startX="-100.0" />
+      <Line endX="-100.0" endY="364.0" layoutX="634.0" layoutY="392.0" startX="-100.0" />
+      <Line endX="-40.0" layoutX="132.0" layoutY="391.0" startX="-100.0" />
+      <Line endX="-105.5" endY="289.0" layoutX="137.0" layoutY="466.0" startX="-105.5" startY="-74.5" />
+      <Line endX="100.0" layoutX="435.0" layoutY="756.0" startX="-404.0" />
+      <ScrollPane layoutX="47.0" layoutY="414.0" prefHeight="179.0" prefWidth="466.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lbNote" layoutX="23.0" layoutY="23.0" text="Label" />
+               </children>
+          </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label layoutX="52.0" layoutY="618.0" text="Lesion ED1389" underline="true" />
+      <Label layoutX="52.0" layoutY="643.0" text="Taken: 02:00 PM" />
+      <Label layoutX="52.0" layoutY="679.0" text="Lesion ED1390" underline="true" />
+      <Label layoutX="52.0" layoutY="704.0" text="Taken: 02:30 PM" />
+      <Label layoutX="280.0" layoutY="618.0" text="Click image to enlarge it and to see " />
+      <Label layoutX="284.0" layoutY="638.0" text="detail infomation of lesion" />
+      <Pane fx:id="pane" layoutX="585.0" layoutY="392.0" prefHeight="330.0" prefWidth="148.0">
+          
+      </Pane>
+<!--      <ImageView fx:id="imageV" fitHeight="365.0" fitWidth="176.0" layoutX="585.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../download.png" />
+         </image>
+      </ImageView>-->
+      <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="192.0" layoutY="673.0" pickOnBounds="true" preserveRatio="true">
+<!--         <image>-->
+<!--            <Image url="@3198887-CTFPSJFD-6.jpg" />-->
+<!--         </image>-->
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="192.0" layoutY="614.0" pickOnBounds="true" preserveRatio="true">
+<!--         <image>-->
+<!--            <Image url="@51Gt1AHUoPL._SX466_.jpg" />-->
+<!--         </image>-->
+      </ImageView>
+      <Label fx:id="txtDate" layoutX="187.0" layoutY="139.0" text="Label" />
+      <Label fx:id="txtTime" layoutX="187.0" layoutY="171.0" text="Label" />
+      <Label fx:id="txtDoctor" layoutX="187.0" layoutY="202.0" text="Label" />
+      <Label fx:id="txtClinic" layoutX="187.0" layoutY="237.0" text="Label" />
+      <Label fx:id="txtPatientName" layoutX="187.0" layoutY="273.0" text="Label" />
+      <Label fx:id="txtPatientId" layoutX="187.0" layoutY="306.0" text="Label" />
+      <ImageView fitHeight="44.0" fitWidth="75.0" layoutX="182.0" layoutY="613.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Lesions/ISIC_0024308.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="75.0" layoutX="182.0" layoutY="674.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Lesions/ISIC_0024320.jpg" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

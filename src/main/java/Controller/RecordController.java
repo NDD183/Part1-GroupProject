@@ -17,6 +17,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -115,6 +116,8 @@ public class RecordController implements Initializable {
     private Map<Long, Visit> visitMap =  new HashMap<>();
     private Map<Integer, Patient> searchMap =  new HashMap<>();
     static int responseCode;
+    static long loginClinicID;
+    static String logServer;
     private ObservableList<Patient> patientData;
     private  List<Patient> patientList ;
     private ObservableList<Visit> visitData;
@@ -125,7 +128,6 @@ public class RecordController implements Initializable {
    // private final static int dataSize = 100;
     private final static int prowsPerPage = 10;
     private final static int vrowsPerPage = 5;
-    static long loginClinicID;
    // static  Set<Patient> patientSet = new HashSet<>();
     /**Name: initialize
      **Event: When the patientRecord.fxml is loaded
@@ -146,6 +148,7 @@ public class RecordController implements Initializable {
         logoutLab.setCursor(Cursor.HAND);
         // Additional configure label
         editPatientLab.setDisable(true);
+        editVisitLab.setDisable(true);
         // Set value for comboBox
         typeBox.getItems().addAll("ID","Name");
         typeBox.setValue("ID");
@@ -190,9 +193,12 @@ public class RecordController implements Initializable {
         visitTable.setRowFactory(tv -> {
             TableRow<Visit> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
-                if (event.getClickCount() == 2 && (!row.isEmpty()) ) {
+                if (event.getClickCount() == 1 && (!row.isEmpty()) ) {
                     selectedVisit = row.getItem();
                     System.out.println(selectedVisit.getStartDate());
+                    if(logServer.equals("Head Doctor")) {
+                        editVisitLab.setDisable(false);
+                    }
                 }
             });
             return row ;
@@ -208,6 +214,14 @@ public class RecordController implements Initializable {
       //  }
         // Load Record to UI
             reloadTable("patient", patientMap);
+
+            accLab.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    screenController.closeScreen((Stage) accLab.getScene().getWindow());
+                    screenController.openScreen("map");
+                }
+            });
     }
 
 
@@ -306,7 +320,10 @@ public class RecordController implements Initializable {
      **Effect: The method help user to additionally config UI
      */
     public void editVisitClicked(MouseEvent mouseEvent) {
-
+        screenController.closeScreen((Stage) editPatientLab.getScene().getWindow());
+        VisitController.selectedVisitID = Math.toIntExact(selectedVisit.getId());
+        VisitController.selectedPatientID = Math.toIntExact(selectedPatient.getId());
+        screenController.openScreen("visit");
         System.out.println("edit visit clicked");
     }
 
@@ -557,8 +574,9 @@ public class RecordController implements Initializable {
                 visitPage.setPageCount(visitList.size() / vrowsPerPage + 1);
                 visitPage.setPageFactory(this::createVisitPage);
             }
-
-            editPatientLab.setDisable(false);
+            if(logServer.equals("Head Doctor")) {
+                editPatientLab.setDisable(false);
+            }
         }
     }
     /**Name: createPatientPage
@@ -601,6 +619,10 @@ public class RecordController implements Initializable {
     //Receive message from scene 2
     public void getLoadCode(int code) {
         responseCode = code;
+    }
+    //Receive message from scene 2
+    public void getServer(String server) {
+        logServer = server;
     }
     //Receive message from login screen
     public void getClinicID(String cid) {

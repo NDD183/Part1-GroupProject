@@ -14,6 +14,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -96,6 +97,15 @@ public class LesionResultController implements Initializable {
 
         // Fetch data base on keyword and search type
         loadData();
+
+        // access other
+        accLab.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                screenController.closeScreen((Stage) accLab.getScene().getWindow());
+                screenController.openScreen("map");
+            }
+        });
 
     }
 

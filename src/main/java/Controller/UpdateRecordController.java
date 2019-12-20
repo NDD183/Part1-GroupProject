@@ -199,6 +199,18 @@ public class UpdateRecordController implements Initializable {
         // Load visit list of patient
       //  System.out.println(visitList.get(0).getId());
         loadVisitTable();
+
+        accLab.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                screenController.closeScreen((Stage) accLab.getScene().getWindow());
+                screenController.openScreen("map");
+            }
+        });
+
+
+
+
     }
 
     public void loadPatientInfo() {

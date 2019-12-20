@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="776.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ZoomingLesionController">
+    <children>
+        <VBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="800.0">
+            <children>
+                <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="800.0" text="LESION RECORD " textFill="#d30c0c" wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </Label>
+                <HBox prefHeight="92.0" prefWidth="200.0">
+                    <padding>
+                        <Insets top="15.0" />
+                    </padding>
+                    <children>
+                        <Label fx:id="accLab" onMouseClicked="#accessClicked" text="Access other hospitals in system" underline="true" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <padding>
+                                <Insets left="5.0" top="10.0" />
+                            </padding>
+                        </Label>
+                        <Label fx:id="hosNameLab" alignment="CENTER" contentDisplay="CENTER" text="SIR JONH MONASH HOSPITAL" textAlignment="CENTER" textFill="#da0707" wrapText="true">
+                            <padding>
+                                <Insets left="60.0" right="15.0" top="5.0" />
+                            </padding>
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="searchLab" layoutX="10.0" layoutY="25.0" onMouseClicked="#searchClicked" text="Search for lessions" underline="true" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <padding>
+                                <Insets left="100.0" top="10.0" />
+                            </padding>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="15.0" right="5.0" />
+            </padding>
+        </VBox>
+        <Group layoutX="69.0" layoutY="154.0" />
+        <Label layoutX="187.0" layoutY="139.0" />
+        <Label fx:id="accLab" layoutX="55.0" layoutY="95.0" onMouseClicked="#accessClicked" text="Lesion General Information" wrapText="true">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <padding>
+                <Insets left="5.0" top="10.0" />
+            </padding>
+        </Label>
+        <Group layoutX="136.0" layoutY="146.0" />
+        <Line endX="-62.0" layoutX="119.0" layoutY="115.0" startX="-102.29288482666016" startY="-7.62939453125E-6" />
+        <Line endX="-100.0" endY="610.0" layoutX="116.0" layoutY="117.0" startX="-99.99998474121094" startY="-2.9925918579101562" />
+        <Line endX="658.0" layoutX="116.0" layoutY="727.0" startX="-100.0" />
+        <Line endX="404.20709228515625" layoutX="370.0" layoutY="117.0" startX="-119.0" />
+        <Line endX="100.5" endY="549.5" layoutX="674.0" layoutY="178.0" startX="100.0" startY="-63.0" />
+        <Group layoutX="68.0" layoutY="426.0" />
+        <Button layoutX="349.0" layoutY="176.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="209.0" text="Whole Lesion fit Window" />
+        <Button layoutX="349.0" layoutY="134.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="209.0" text="Highest posible magnification" />
+      <TextArea layoutX="606.0" layoutY="139.0" prefHeight="22.0" prefWidth="29.0" text="T" />
+      <ImageView fitHeight="457.0" fitWidth="702.0" layoutX="60.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../51Gt1AHUoPL._SX466_.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="665.0" layoutY="153.0" text="Add Text" />
+      <Spinner layoutX="94.0" layoutY="149.0" prefHeight="27.0" prefWidth="81.0" />
+      <Button layoutX="570.0" layoutY="688.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="159.0" text="Back to Lesion Record" />
+    </children>
+</AnchorPane>
